@@ -1,0 +1,21 @@
+:root {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	--bg-color: #ffffff;
+	--main-color: #453e3e;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--main-color);
+	margin: 0;
+	line-height: 26.4px;
+}

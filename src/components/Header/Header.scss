@@ -1,0 +1,17 @@
+.header {
+    background-color: transparent !important;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 0 20rem;
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .rs-navbar-item {
+
+        &:hover {}
+    }
+}
