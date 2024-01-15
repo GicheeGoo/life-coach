@@ -6,17 +6,18 @@ import { NotFound } from './pages/_404.jsx';
 
 import './style.scss'
 import 'rsuite/dist/rsuite-no-reset.min.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export function App() {
 	return (
 		<LocationProvider>
-			<Header />
-			<main>
+			<div style={{ width: '100vw', height: '100vh' }}>
+				<Header />
 				<Router>
 					<Route path="/" component={Home} />
 					<Route default component={NotFound} />
 				</Router>
-			</main>
+			</div>
 		</LocationProvider>
 	);
 }

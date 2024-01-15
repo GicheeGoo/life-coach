@@ -1,12 +1,15 @@
-import { useState } from 'preact/hooks';
+import { useLayoutEffect, useRef, useState } from 'preact/hooks';
 import { useLocation } from 'preact-iso';
 
 import Nav from 'rsuite/esm/Nav/Nav';
 import Navbar from 'rsuite/esm/Navbar/Navbar';
 
+import CreditCardMinusIcon from '@rsuite/icons/CreditCardMinus';
+
 import logo from '../../assets/logo.png';
 
 import './Header.scss';
+import { IconButton } from 'rsuite';
 
 const routes = [
 	{ label: 'Home', to: '/' },
@@ -15,11 +18,36 @@ const routes = [
 	{ label: 'Khoá học', to: '/khoa-hoc' },
 ];
 
-export function Header() {
+export const Header = () => {
 	const { path } = useLocation();
 
+	const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+	useLayoutEffect(() => {
+		document.addEventListener('scroll', handleScroll, true)
+	}, [])
+
+	const handleScroll = (event: Event) => {
+		const wrapper = wrapperRef.current;
+		if (!wrapper) {
+			return;
+		}
+
+		const target = event.target as HTMLElement;
+		if (!target?.classList.contains('wrapper')) {
+			return;
+		}
+
+		if (target.scrollTop < 20) {
+			wrapper.classList.add('float')
+		}
+		else {
+			wrapper.classList.remove('float')
+		}
+	}
+
 	return (
-		<Navbar className='header'>
+		<Navbar ref={wrapperRef} className='header float'>
 			<Navbar.Brand href="/" className='header-logo'>
 				<img src={logo} />
 			</Navbar.Brand>
@@ -31,8 +59,13 @@ export function Header() {
 					</Nav.Item>
 				))}
 			</Nav>
-			<Nav pullRight>
-				<Nav.Item>Settings</Nav.Item>
+			<Nav pullRight className='nav-right'>
+				<IconButton
+					color='red'
+					appearance='primary'
+					icon={<CreditCardMinusIcon />}
+					circle
+				/>
 			</Nav>
 		</Navbar>
 	);
