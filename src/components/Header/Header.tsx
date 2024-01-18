@@ -47,26 +47,28 @@ export const Header = () => {
 	}
 
 	return (
-		<Navbar ref={wrapperRef} className='header float'>
-			<Navbar.Brand href="/" className='header-logo'>
-				<img src={logo} />
-			</Navbar.Brand>
+		<div ref={wrapperRef} className='header-wrapper float'>
+			<Navbar className='header'>
+				<Navbar.Brand href="/" className='header-logo nav'>
+					<img src={logo} />
+				</Navbar.Brand>
 
-			<Nav activeKey={path}>
-				{routes.map(route => (
-					<Nav.Item key={route.label} href={route.to} eventKey={route.to}>
-						{route.label}
-					</Nav.Item>
-				))}
-			</Nav>
-			<Nav pullRight className='nav-right'>
-				<IconButton
-					color='red'
-					appearance='primary'
-					icon={<CreditCardMinusIcon />}
-					circle
-				/>
-			</Nav>
-		</Navbar>
+				<Nav activeKey={path} className='nav nav-items'>
+					{routes.map(route => (
+						<Nav.Item key={route.label} className='nav-item' href={route.to} eventKey={route.to}>
+							{route.label}
+						</Nav.Item>
+					))}
+				</Nav>
+				<Nav pullRight className='nav'>
+					<IconButton
+						color='red'
+						appearance='primary'
+						icon={<CreditCardMinusIcon />}
+						circle
+					/>
+				</Nav>
+			</Navbar>
+		</div>
 	);
 }

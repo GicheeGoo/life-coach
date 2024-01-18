@@ -1,0 +1,26 @@
+$breakpoints: (
+    mobile: 576px,
+    tablet: 768px,
+    desktop-sm: 992px,
+    desktop: 1024px,
+    w-1280: 1280px,
+    w-1440: 1440px,
+    hd: 1600px,
+    w-1800: 1800px,
+    wqhd: 2500px,
+    w-4k: 4000px,
+    w-5k: 5100px
+);
+
+@mixin breakpoint ($breakpoint) {
+
+    // Does breakpoint input exist
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Get px value
+        $breakpoint-values: map-get($breakpoints, $breakpoint);
+
+        @media (max-width: $breakpoint-values) {
+            @content;
+        }
+    }
+}
