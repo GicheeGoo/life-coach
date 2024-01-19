@@ -1,8 +1,10 @@
 import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import { Header } from './components/Header/Header.js';
 import { Home } from './pages/Home/index.jsx';
 import { NotFound } from './pages/_404.jsx';
+import { Blog } from './pages/Blog/Blog';
 
 import '@/styles/all.scss'
 import 'rsuite/dist/rsuite-no-reset.min.css';
@@ -12,11 +14,14 @@ export function App() {
 	return (
 		<LocationProvider>
 			<div style={{ width: '100vw', height: '100vh' }}>
-				<Header />
-				<Router>
-					<Route path="/" component={Home} />
-					<Route default component={NotFound} />
-				</Router>
+				<PerfectScrollbar className='wrapper'>
+					<Header />
+					<Router>
+						<Route path="/" component={Home} />
+						<Route path="/blog" component={Blog} />
+						<Route default component={NotFound} />
+					</Router>
+				</PerfectScrollbar>
 			</div>
 		</LocationProvider>
 	);
