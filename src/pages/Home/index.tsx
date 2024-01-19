@@ -10,7 +10,7 @@ export const Home = () => {
 		<PerfectScrollbar className='wrapper'>
 			<div className='home'>
 				<SectionA />
-				{/* <SectionB /> */}
+				<SectionB />
 			</div>
 		</PerfectScrollbar>
 	)

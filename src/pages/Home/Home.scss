@@ -2,24 +2,38 @@
 
 .home {
     .home-section {
-        background-repeat: no-repeat;
-        background-position: right 0 top 0;
-        background-size: 48%;
-        background-attachment: scroll;
-        background-image: url('../../assets/life-coach.png');
-        background-clip: padding-box;
+        &.sec-a {
+            background-repeat: no-repeat;
+            background-position: right 0 top 0;
+            background-size: 48%;
+            background-attachment: scroll;
+            background-image: url('../../assets/life-coach.png');
+            background-clip: padding-box;
+        }
+
+        &.sec-b {
+            .section-content {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: var(--spacing-12);
+                    height: 4px;
+                    background-color: #000;
+                }
+            }
+        }
     }
 
     .section-title {
         font-weight: bold;
-        margin-bottom: 1rem;
         letter-spacing: 2px;
+    }
 
-        &.main {
-            line-height: 1em;
-            font-size: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
+    .section-content {
+        margin-bottom: 2rem;
     }
 
     blockquote {

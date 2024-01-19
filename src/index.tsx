@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header.js';
 import { Home } from './pages/Home/index.jsx';
 import { NotFound } from './pages/_404.jsx';
 
-import './style.scss'
+import '@/styles/all.scss'
 import 'rsuite/dist/rsuite-no-reset.min.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
