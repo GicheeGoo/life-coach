@@ -11,7 +11,7 @@ import beautySuccess from '@/assets/logo-beauty-success.png'
 export const SectionA: FC = props => {
     return (
         <Content className="home-section sec-a">
-            <Wrapper>
+            <Wrapper className='pt-40 px-4 pb-4'>
                 <div style={{ width: 550, maxWidth: '100%' }}>
                     <div className='section-title'>TRUYỀN NGHỀ LIFE COACH</div>
                     <h1>Nghề Life Coach</h1>

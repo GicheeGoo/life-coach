@@ -16,7 +16,6 @@ export const Wrapper: FC<WrapperProps> = props =>
                 width: 1200,
                 maxWidth: '100%',
                 margin: 'auto',
-                padding: '10rem 1rem 1rem',
                 ...style
             }}
         >

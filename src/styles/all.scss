@@ -1,4 +1,5 @@
 @import './var';
+@import './flex';
 @import './breakpoints';
 @import './spacing';
 
@@ -13,8 +14,11 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 
+	--text: 69, 62, 62;
+
 	--bg-color: #ffffff;
-	--main-color: #453e3e;
+	--main-color: rgba(var(--text), 1);
+	--sub-color: rgba(var(var(--text)), .7);
 }
 
 body {
@@ -27,6 +31,11 @@ body {
 body,
 html {
 	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 h1,

@@ -6,7 +6,7 @@ import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 export const SectionB: FC = props => {
     return (
         <div className='home-section sec-b'>
-            <Wrapper className="flex">
+            <Wrapper className="flex pt-40 px-4 pb-4">
                 <img className='flex-1' src={coach} width={600} />
 
                 <div className='section-content flex-1 px-16 mt-6 pt-6'>

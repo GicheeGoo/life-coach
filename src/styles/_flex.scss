@@ -1,0 +1,55 @@
+$directions: (
+    row: row,
+    col: column,
+    r-reverse: row-reverse,
+    c-reverse: column-reverse
+);
+
+$justifies: (
+    around: space-around,
+    between: space-between,
+);
+
+$aligns: (
+    start: start,
+    end: end,
+    center: center
+);
+
+$steps: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, none;
+
+.flex {
+    display: flex;
+}
+
+@each $key, $value in $directions {
+    .flex-#{$key} {
+        flex-direction: $value;
+    }
+}
+
+@each $step in $steps {
+    .flex-#{$step} {
+        flex: $step;
+    }
+
+    .gap-#{$step} {
+        gap: var(--spacing-#{$step});
+    }
+}
+
+@each $key, $value in $aligns {
+    .justify-#{$key} {
+        justify-content: #{$value};
+    }
+
+    .items-#{$key} {
+        align-items: #{$value};
+    }
+}
+
+@each $key, $value in $justifies {
+    .justify-#{$key} {
+        justify-content: #{$value};
+    }
+}

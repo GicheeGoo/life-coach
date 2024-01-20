@@ -1,15 +1,14 @@
-import { useLayoutEffect, useRef, useState } from 'preact/hooks';
+import { useLayoutEffect, useRef } from 'preact/hooks';
 import { useLocation } from 'preact-iso';
-
-import Nav from 'rsuite/esm/Nav/Nav';
-import Navbar from 'rsuite/esm/Navbar/Navbar';
+import { IconButton } from 'rsuite';
 
 import CreditCardMinusIcon from '@rsuite/icons/CreditCardMinus';
+
+import { Wrapper } from '../bases/Wrapper/Wrapper';
 
 import logo from '../../assets/logo.png';
 
 import './Header.scss';
-import { IconButton } from 'rsuite';
 
 const routes = [
 	{ label: 'Home', to: '/' },
@@ -47,28 +46,33 @@ export const Header = () => {
 	}
 
 	return (
-		<div ref={wrapperRef} className='header-wrapper float'>
-			<Navbar className='header'>
-				<Navbar.Brand href="/" className='header-logo nav'>
-					<img src={logo} />
-				</Navbar.Brand>
+		<div ref={wrapperRef} className='header float'>
+			<Wrapper className='header-content flex justify-between'>
+				<div className='flex flex-1 items-center'>
+					<a href='/' className='pr-4'>
+						<img src={logo} />
+					</a>
 
-				<Nav activeKey={path} className='nav nav-items'>
 					{routes.map(route => (
-						<Nav.Item key={route.label} className='nav-item' href={route.to} eventKey={route.to}>
+						<a
+							key={route.label}
+							className='px-4'
+							href={route.to}
+						>
 							{route.label}
-						</Nav.Item>
+						</a>
 					))}
-				</Nav>
-				<Nav pullRight className='nav'>
+				</div>
+
+				<div className='flex flex-0 items-center'>					
 					<IconButton
 						color='red'
 						appearance='primary'
 						icon={<CreditCardMinusIcon />}
 						circle
 					/>
-				</Nav>
-			</Navbar>
+				</div>
+			</Wrapper>
 		</div>
 	);
 }
