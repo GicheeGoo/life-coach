@@ -66,7 +66,7 @@ export const Blog: FC = () => {
                                 <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://nghelifecoach.com/">
                                     <label>
                                         <span class="screen-reader-text">Search for:</span>
-                                        <input type="search" class="search-field" placeholder="Search..." value="" name="s" autoComplete={false} onChange={handleChangeSearchKey} />
+                                        <input type="search" class="search-field" placeholder="Search..." value="" name="s" autoComplete='off' onChange={handleChangeSearchKey} />
                                         <button class="search-submit ast-search-submit" aria-label="Search Submit">
                                             <span>Search</span>
                                             <i><span class="ast-icon icon-search"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="-893 488 142 142" enable-background="new -888 480 142 142">
