@@ -71,28 +71,25 @@ img {
 	vertical-align: middle;
 }
 
-a, a:focus, a:hover, a:visited {
-	text-decoration: none;
-}
-
-a {
-	color: #ef4d48;
-
-	&:hover, &:focus, &:visited {
-		color: #d90700;
-	}
-}
-
-input[type=email], input[type=number], input[type=password], input[type=reset], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea {
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=reset],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=url],
+select,
+textarea {
 	color: #666;
-    padding: 0.75em;
-    height: auto;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ddd;
-    border-radius: 2px;
-    background: #f9fafb;
-    box-shadow: none;
-    box-sizing: border-box;
-    transition: all .2s linear;
+	padding: 0.75em;
+	height: auto;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ddd;
+	border-radius: 2px;
+	background: #f9fafb;
+	box-shadow: none;
+	box-sizing: border-box;
+	transition: all .2s linear;
 }

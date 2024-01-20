@@ -46,7 +46,7 @@ export const Blog: FC = () => {
                                     {blogs.map((blog, index) => {
                                         return (
                                             <Post
-                                                key={'post-index'}
+                                                key={index + ''}
                                                 title={blog.title}
                                                 description={blog.description}
                                                 image={blog.image}
