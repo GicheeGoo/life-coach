@@ -2,12 +2,13 @@ import { FC } from "preact/compat";
 
 import { SVGProps } from ".";
 
-export const ArrowRight: FC<SVGProps> = ({ className }) => (
+export const ArrowRight: FC<SVGProps> = ({ className, ...props }) => (
     <svg
         className={className}
         width={15}
         height={15}
         viewBox="0 0 448 512"
+        {...props}
     >
         <path
             fill='white'

@@ -8,16 +8,10 @@ import CreditCardMinusIcon from '@rsuite/icons/CreditCardMinus';
 import { Wrapper } from '@/components/bases/Wrapper/Wrapper';
 import { Image } from '@/components/bases/Image/Image';
 
+import { routes } from '@/constants/routes';
 import logo from '@/assets/logo.png';
 
 import './Header.scss';
-
-const routes = [
-	{ label: 'Home', to: '/' },
-	{ label: 'Blog', to: '/blog' },
-	{ label: 'GEIN Academy', to: '/gein' },
-	{ label: 'Khoá học', to: '/khoa-hoc' },
-];
 
 export const Header = () => {
 	const { path } = useLocation();

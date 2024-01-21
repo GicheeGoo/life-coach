@@ -5,6 +5,7 @@ import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
 import { HomeSection } from "..";
 
+import { details } from '@/constants/coach';
 import coach from '@/assets/life-coach-2.png';
 
 export const SectionB: FC<HomeSection> = ({ className }) => {
@@ -13,7 +14,7 @@ export const SectionB: FC<HomeSection> = ({ className }) => {
             <div className='flex-1'>
                 <Image src={coach} width={600} />
                 <div style={{ textAlign: 'center' }}>
-                    <h5>Thiên Lý</h5>
+                    <h5>{details.name}</h5>
                     <p>Chuyên gia Life Coach</p>
                 </div>
             </div>

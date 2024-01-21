@@ -48,7 +48,12 @@ export const SectionC: FC<HomeSection> = ({ className }) =>
                     </p>
                 </div>
                 <div className='flex flex-1 justify-end items-end'>
-                    <Button appearance='primary' color='red' size='lg' >
+                    <Button
+                        appearance='primary'
+                        color='red'
+                        size='lg'
+                        rounded
+                    >
                         Xem tất cả
                     </Button>
                 </div>

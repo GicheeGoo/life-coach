@@ -31,7 +31,20 @@
             top: 0;
             width: var(--spacing-12);
             height: 4px;
-            background-color: #000;
+            background-color: var(--main-color);
+        }
+
+        &-center {
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &-left {
+            &::after {
+                left: 0;
+            }
         }
     }
 
@@ -52,8 +65,15 @@
         border-radius: 100%;
     }
 
-    .listing-img {
+    .listing-img,
+    .book img {
         border-radius: var(--spacing-4);
+    }
+
+    .review {
+        p:first-letter {
+            text-transform: uppercase;
+        }
     }
 
     blockquote {
@@ -62,7 +82,7 @@
         padding: 1px 0 1px var(--spacing-8);
         font-style: italic;
         font-size: 1.1rem;
-        color: #453e3e;
+        color: rgba(var(--text), .1);
 
         &::after {
             content: '';

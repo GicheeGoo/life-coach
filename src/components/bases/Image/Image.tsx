@@ -8,9 +8,11 @@ export const Image: FC<HTMLAttributes<HTMLImageElement>> = props =>
     {
         const target = event.target as HTMLImageElement;
         target.src = unknown;
+        target.width = 80;
+        target.height = 80;
     }
 
     return (
-            <img onError={handleError} {...props} />
+        <img onError={handleError} {...props} />
     )
 }

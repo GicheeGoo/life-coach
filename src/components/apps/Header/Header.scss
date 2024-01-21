@@ -5,11 +5,6 @@
     }
 
     a {
-        transition: .3s color;
-
-        &.active,
-        &:hover {
-            color: var(--primary-color);
-        }
+        color: var(--main-color);
     }
 }

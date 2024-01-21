@@ -1,0 +1,17 @@
+.footer {
+    border-top: 1px solid rgba(var(--main), .1);
+
+    &.dark {
+        background-color: var(--sub-color);
+    }
+
+    &-content>div:not(:first-child) {
+        a {
+            color: var(--main-color);
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+}

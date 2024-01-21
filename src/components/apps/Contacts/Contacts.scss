@@ -1,0 +1,17 @@
+.contacts {
+    position: fixed;
+    bottom: var(--spacing-8);
+    left: var(--spacing-8);
+
+    .contact {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid rgba(var(--main), .1);
+        cursor: pointer;
+        transition: .2s box-shadow;
+
+        &:hover {
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        }
+    }
+}

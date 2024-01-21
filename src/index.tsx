@@ -1,10 +1,15 @@
 import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-import { Header } from './components/apps/Header/Header.js';
-import { Home } from './pages/Home/index.jsx';
-import { NotFound } from './pages/_404.jsx';
-import { Blog } from './pages/Blog/Blog';
+import { Header } from '@/components/apps/Header/Header';
+import { Footer } from '@/components/apps/Footer/Footer';
+import { Copyright } from '@/components/apps/Copyright/Copyright';
+import { Contacts } from '@/components/apps/Contacts/Contacts';
+
+import { Home } from '@/pages/Home';
+import { Blog } from '@/pages/Blog/Blog';
+import { NotFound } from '@/pages/_404';
+import { ROUTE_URL } from '@/constants/routes';
 
 import '@/styles/all.scss'
 import 'rsuite/dist/rsuite-no-reset.min.css';
@@ -17,10 +22,13 @@ export function App() {
 				<PerfectScrollbar options={{ suppressScrollX: true }}>
 					<Header />
 					<Router>
-						<Route path="/" component={Home} />
-						<Route path="/blog" component={Blog} />
+						<Route path={ROUTE_URL.home} component={Home} />
+						<Route path={ROUTE_URL.blog} component={Blog} />
 						<Route default component={NotFound} />
 					</Router>
+					<Footer />
+					<Copyright />
+					<Contacts />
 				</PerfectScrollbar>
 			</div>
 		</LocationProvider>

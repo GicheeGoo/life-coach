@@ -38,9 +38,11 @@ export const SectionA: FC<HomeSection> = ({ className }) => {
 
                     <h6 className='section-title' style={{ marginTop: '5rem' }}>AS FEATURED IN:</h6>
 
-                    {imgs.map((img, index) => (
-                        <Image key={index} src={img} />
-                    ))}
+                    <div className='my-8'>
+                        {imgs.map((img, index) => (
+                            <Image key={index} src={img} />
+                        ))}
+                    </div>
 
                     <blockquote>
                         <p>
