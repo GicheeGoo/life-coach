@@ -2,7 +2,8 @@ export const ROUTE_URL = {
 	home: '/',
 	blog: '/blog',
 	gein: '/gein',
-	course: '/khoa-hoc'
+	course: '/khoa-hoc',
+	store: '/store',
 }
 
 export const routes = [

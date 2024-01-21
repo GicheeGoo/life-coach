@@ -9,7 +9,7 @@ import { HomeSection } from "..";
 import geinGroup from '@/assets/logo-gein-group.png';
 import geinAcademy from '@/assets/logo-gein-academy.png';
 import beautySuccess from '@/assets/logo-beauty-success.png'
-
+import { course } from "@/constants/course";
 
 const imgs = [geinGroup, geinAcademy, beautySuccess];
 
@@ -32,8 +32,10 @@ export const SectionA: FC<HomeSection> = ({ className }) => {
                         color='red'
                         size='lg'
                     >
-                        TÌM HIỂU NGAY
-                        <ArrowRight className='ml-4'/>
+                        <a href={course.to}>
+                            TÌM HIỂU NGAY
+                            <ArrowRight className='ml-4'/>
+                        </a>
                     </Button>
 
                     <h6 className='section-title' style={{ marginTop: '5rem' }}>AS FEATURED IN:</h6>

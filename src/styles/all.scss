@@ -18,8 +18,9 @@
 
 	--primary: 217, 7, 0;
 	--primary-faded: 239, 77, 72;
+	--bg: 255, 255, 255;
 
-	--bg-color: #ffffff;
+	--bg-color: rgba(var(--bg), 1);
 	--main-color: rgba(var(--main), 1);
 	--sub-color: rgba(var(--sub), 1);
 	--primary-color: rgba(var(--primary), 1);
@@ -42,6 +43,14 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+button {
+	a,
+	a:hover,
+	a:focus {
+		color: var(--bg-color);
+	}
 }
 
 h1,

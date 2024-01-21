@@ -10,11 +10,13 @@ import {
     Instagram,
     Youtube
 } from "@/components/bases/SVG";
+
 import { HomeSection } from "..";
 
 import book1 from '@/assets/book1.png';
 import book2 from '@/assets/book2.png';
 import book3 from '@/assets/book3.png';
+import { ROUTE_URL } from "@/constants/routes";
 
 const books = [
     {
@@ -49,7 +51,9 @@ export const SectionF: FC<HomeSection> = ({ className }) =>
                     size='lg'
                     rounded
                 >
-                    Xem tất cả
+                    <a href={ROUTE_URL.store}>
+                        Xem tất cả
+                    </a>
                 </Button>
             </div>
 

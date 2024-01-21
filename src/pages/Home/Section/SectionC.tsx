@@ -9,6 +9,7 @@ import { Right } from "@/components/bases/SVG";
 import shortImg1 from '@/assets/short-post-1.png';
 import shortImg2 from '@/assets/short-post-2.png';
 import shortImg3 from '@/assets/short-post-3.png';
+import { ROUTE_URL } from "@/constants/routes";
 
 import { HomeSection } from "..";
 
@@ -54,7 +55,9 @@ export const SectionC: FC<HomeSection> = ({ className }) =>
                         size='lg'
                         rounded
                     >
-                        Xem tất cả
+                        <a href={ROUTE_URL.blog}>
+                            Xem tất cả
+                        </a>
                     </Button>
                 </div>
             </div>
@@ -99,10 +102,11 @@ const ShortPost: FC<ShortPostProps> = props =>
                     color='red'
                     size='lg'
                     rounded
-                    onClick={() => route(to)}
                 >
-                    Xem thêm
-                    <Right className='ml-2'/>
+                    <a className='link-dark' href={to}>
+                        Xem thêm
+                        <Right className='ml-2'/>
+                    </a>
                 </Button>
             </div>
         </div>
