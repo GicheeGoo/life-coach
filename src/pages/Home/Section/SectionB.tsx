@@ -12,14 +12,14 @@ export const SectionB: FC<HomeSection> = ({ className }) => {
     return (
         <Wrapper className={clsx('flex', className)}>
             <div className='flex-1'>
-                <Image src={coach} width={600} />
+                <Image src={coach}/>
                 <div style={{ textAlign: 'center' }}>
-                    <h5>{details.name}</h5>
+                    <h5 className='my-2'>{details.name}</h5>
                     <p>Chuyên gia Life Coach</p>
                 </div>
             </div>
 
-            <div className='section-content head-line flex-1 px-16 mt-6'>
+            <div className='section-content head-line flex-1 px-12 mt-6'>
                 <h2>
                     Giúp mọi người có cuộc sống tốt đẹp, hạnh phúc và viên mãn hơn mỗi ngày
                 </h2>
