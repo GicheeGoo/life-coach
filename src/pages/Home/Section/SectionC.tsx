@@ -85,7 +85,7 @@ const ShortPost: FC<ShortPostProps> = props =>
     )
 
     return (
-        <div className='sort-post flex flex-col flex-1 overflow-hidden'>
+        <div className='short-post flex flex-col flex-1 overflow-hidden'>
             {renderLink(<Image src={src} className='h-64'/>)}
             
             <div className='flex-1 px-8 pt-4'>
