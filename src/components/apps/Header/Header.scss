@@ -6,5 +6,9 @@
 
     a {
         color: var(--main-color);
+
+        &.active {
+            color: var(--primary-color);
+        }
     }
 }
