@@ -5,10 +5,13 @@ import clsx from "clsx";
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
 
-import { details } from '@/constants/coach';
 import { generateContact } from "@/helpers/contactLink";
-import logo from '@/assets/logo.png';
+import { details } from '@/constants/coach';
 import { ROUTE_URL } from "@/constants/routes";
+import { dmcaUrl } from "@/constants/dmca";
+
+import logo from '@/assets/logo-lg.png';
+import dmca from '@/assets/dmca.png';
 
 import './Footer.scss';
 
@@ -27,7 +30,7 @@ export const Footer: FC = props =>
             <Wrapper wrapperClassName={clsx('footer', path === ROUTE_URL.home && 'dark')}>
                 <div className='footer-content flex gap-8 py-12'>
                     <div className='flex-2'>
-                        <Image src={logo} />
+                        <Image className='mb-4' src={logo} width={101} />
                         <p>Nghề Life Coach ra đời với mong muốn giúp đỡ mọi người có cuộc sống tốt đẹp, hạnh phúc và viên mãn hơn mỗi ngày!</p>
 
                         <ul className='ml-12' style={{ listStyleType: 'disc' }}>
@@ -51,7 +54,7 @@ export const Footer: FC = props =>
                     </div>
                     <div className='flex-1'>
                         <h5>Giới thiệu</h5>
-                        <ul>
+                        <ul className='mb-4'>
                             {links.map(link => (
                                 <li key={link.to}>
                                     <a href={link.to}>
@@ -60,6 +63,10 @@ export const Footer: FC = props =>
                                 </li>
                             ))}
                         </ul>
+
+                        <a href={dmcaUrl} target='_blank'>
+                            <Image src={dmca} />
+                        </a>
                     </div>
                 </div>
             </Wrapper>
