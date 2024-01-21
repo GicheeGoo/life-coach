@@ -89,7 +89,7 @@
 
         .widget-title {
             font-weight: 700;
-            font-family: Helvetica,Verdana,Arial,sans-serif;
+            font-family: Helvetica, Verdana, Arial, sans-serif;
             line-height: 1.23em;
         }
     }
@@ -108,7 +108,6 @@
 
 .flex-container {
     display: flex;
-    margin: 4em 0;
 }
 
 .ast-row {
@@ -128,7 +127,7 @@
 
 .blog {
     .entry-title {
-        font-family: Helvetica,Verdana,Arial,sans-serif;
+        font-family: Helvetica, Verdana, Arial, sans-serif;
         font-weight: 500;
         line-height: 1.23em;
 
@@ -146,7 +145,7 @@
     margin-bottom: 1.2em;
     word-wrap: break-word;
 
-    + .ast-blog-featured-section {
+    +.ast-blog-featured-section {
         margin-top: 0.5em;
     }
 }
@@ -155,7 +154,8 @@
     margin-bottom: 1.5em;
 }
 
-.entry-meta, .entry-meta * {
+.entry-meta,
+.entry-meta * {
     line-height: 1.45;
     color: #ef4d48;
 }
@@ -173,16 +173,16 @@
 }
 
 .screen-reader-text {
-    clip: rect(1px,1px,1px,1px);
-    word-wrap: normal!important;
+    clip: rect(1px, 1px, 1px, 1px);
+    word-wrap: normal !important;
     border: 0;
     clip-path: inset(50%);
     height: 1px;
     margin: -1px;
     overflow: hidden;
-    overflow-wrap: normal!important;
+    overflow-wrap: normal !important;
     padding: 0;
-    position: absolute!important;
+    position: absolute !important;
     width: 1px;
 }
 
@@ -198,8 +198,7 @@
         padding: 2em;
         margin-bottom: 2em;
 
-        >*:not(.widget-title)
-        {
+        >*:not(.widget-title) {
             font-size: 1rem;
         }
 

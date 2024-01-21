@@ -1,17 +1,21 @@
 import { FC } from "preact/compat";
 
-import { Button, Content } from 'rsuite';
-
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
+import { Button } from "@/components/bases/Button/Button";
+import { ArrowRight } from '@/components/bases/SVG';
+import { Image } from '@/components/bases/Image/Image';
+import { HomeSection } from "..";
 
 import geinGroup from '@/assets/logo-gein-group.png';
 import geinAcademy from '@/assets/logo-gein-academy.png';
 import beautySuccess from '@/assets/logo-beauty-success.png'
 
-export const SectionA: FC = props => {
+
+const imgs = [geinGroup, geinAcademy, beautySuccess];
+
+export const SectionA: FC<HomeSection> = ({ className }) => {
     return (
-        <Content className="home-section sec-a">
-            <Wrapper className='pt-40 px-4 pb-4'>
+            <Wrapper wrapperClassName='section-a' className={className}>
                 <div style={{ width: 550, maxWidth: '100%' }}>
                     <div className='section-title'>TRUYỀN NGHỀ LIFE COACH</div>
                     <h1>Nghề Life Coach</h1>
@@ -29,24 +33,14 @@ export const SectionA: FC = props => {
                         size='lg'
                     >
                         TÌM HIỂU NGAY
-                        <svg
-                            width={15}
-                            height={15}
-                            viewBox="0 0 448 512"
-                            style={{ marginLeft: '1rem' }}
-                        >
-                            <path
-                                fill='white'
-                                d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
-                            />
-                        </svg>
+                        <ArrowRight className='ml-4'/>
                     </Button>
 
                     <h6 className='section-title' style={{ marginTop: '5rem' }}>AS FEATURED IN:</h6>
 
-                    <img src={geinGroup} />
-                    <img src={geinAcademy} />
-                    <img src={beautySuccess} />
+                    {imgs.map((img, index) => (
+                        <Image key={index} src={img} />
+                    ))}
 
                     <blockquote>
                         <p>
@@ -59,6 +53,5 @@ export const SectionA: FC = props => {
                     </blockquote>
                 </div>
             </Wrapper>
-        </Content>
     )
 }

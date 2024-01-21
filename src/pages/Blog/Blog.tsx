@@ -9,7 +9,7 @@ const blogs = [{
     description: 'Với nỗi trăn trở đau đáu giúp cho hàng triệu gia đình Việt nuôi dạy con tốt hơn, KID TALENT MAP đã ra đời nhằm giúp cha mẹ hiểu được xu hướng tính cách, năng lực nổi bật của con để có thể nói chuyện, giao tiếp, định hướng trẻ […]',
     image: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
     datePublished: '22/08/2023',
-    link: `${window.location.href}/kid-talent-map/`,
+    link: `/gein/kid-talent-map/`,
     imageAlt: 'Kid Talent Map'
 },
 {
@@ -17,7 +17,7 @@ const blogs = [{
     description: 'Mấy năm gần đây, GEIN Academy hay GEIN Group (đọc tương tự: GHÊN) đang nổi lên như một hiện tượng trong giới kinh doanh – đặc biệt là kinh doanh giáo dục. Mới sự phát triển, lan tỏa mạnh mẽ ấy rất nhiều người đang thắc mắc GEIN Academy là',
     image: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
     datePublished: '20/04/2023',
-    link: `${window.location.href}/gein/kid-talent-map/`,
+    link: `/gein/kid-talent-map/`,
     imageAlt: 'Banner Web Nghề Life Coach'
 },
 {
@@ -25,7 +25,7 @@ const blogs = [{
     description: 'Trong xã hội ngày càng phát triển nhanh như hiện nay, việc thấu hiểu bản thân là điều cực kỳ quan trọng. Hiểu mình thì mới biết được cách để đạt được những thành công trong cuộc sống nhanh nhất, có những mối quan hệ hòa hợp chất lượng và',
     image: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
     datePublished: '20/03/2023',
-    link: 'https://nghelifecoach.com/gein/kid-talent-map/',
+    link: '/gein/kid-talent-map/',
     imageAlt: 'Map For Success'
 }
 ]
@@ -36,7 +36,7 @@ export const Blog: FC = () => {
     }
 
     return (
-        <div class={'blog'}>
+        <div class={'blog w-full'}>
             <div class={'site-content'}>
                 <div class="ast-container">
                     <div class={'flex-container'}>
@@ -81,34 +81,34 @@ export const Blog: FC = () => {
                                     <h2 class="widget-title">Bài viết mới</h2><nav aria-label="Bài viết mới">
                                         <ul>
                                             <li>
-                                                <a href="https://nghelifecoach.com/gein/kid-talent-map/">Kid Talent Map là gì? Bản đồ thấu hiểu con có tốt không?</a>
+                                                <a href="/gein/kid-talent-map/">Kid Talent Map là gì? Bản đồ thấu hiểu con có tốt không?</a>
                                             </li>
                                             <li>
-                                                <a href="https://nghelifecoach.com/gein/gein-academy/">GEIN Academy là gì? Sự thật Numerology tại GEIN Group</a>
+                                                <a href="/gein/gein-academy/">GEIN Academy là gì? Sự thật Numerology tại GEIN Group</a>
                                             </li>
                                             <li>
-                                                <a href="https://nghelifecoach.com/gein/map-for-success/">Map For Success là gì? Bản đồ thành công lừa đảo, đa cấp có thật không?</a>
+                                                <a href="/gein/map-for-success/">Map For Success là gì? Bản đồ thành công lừa đảo, đa cấp có thật không?</a>
                                             </li>
                                         </ul>
 
                                     </nav></aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">Phản hồi gần đây</h2><nav aria-label="Phản hồi gần đây"><ul id="recentcomments"></ul></nav></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">Lưu trữ</h2><nav aria-label="Lưu trữ">
                                         <ul>
-                                            <li><a href="https://nghelifecoach.com/2023/08/">Tháng Tám 2023</a></li>
-                                            <li><a href="https://nghelifecoach.com/2023/04/">Tháng Tư 2023</a></li>
-                                            <li><a href="https://nghelifecoach.com/2023/03/">Tháng Ba 2023</a></li>
+                                            <li><a href="/2023/08/">Tháng Tám 2023</a></li>
+                                            <li><a href="/2023/04/">Tháng Tư 2023</a></li>
+                                            <li><a href="/2023/03/">Tháng Ba 2023</a></li>
                                         </ul>
 
                                     </nav></aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">Chuyên mục</h2><nav aria-label="Chuyên mục">
                                         <ul>
-                                            <li class="cat-item cat-item-17"><a href="https://nghelifecoach.com/gein/">GEIN</a>
+                                            <li class="cat-item cat-item-17"><a href="/gein/">GEIN</a>
                                             </li>
                                         </ul>
 
                                     </nav></aside><aside id="meta-2" class="widget widget_meta"><h2 class="widget-title">Meta</h2><nav aria-label="Meta">
                                         <ul>
-                                            <li><a rel="nofollow" href="https://nghelifecoach.com/wp-login.php">Đăng nhập</a></li>
-                                            <li><a href="https://nghelifecoach.com/feed/">RSS bài viết</a></li>
-                                            <li><a href="https://nghelifecoach.com/comments/feed/">RSS bình luận</a></li>
+                                            <li><a rel="nofollow" href="/wp-login.php">Đăng nhập</a></li>
+                                            <li><a href="/feed/">RSS bài viết</a></li>
+                                            <li><a href="/comments/feed/">RSS bình luận</a></li>
 
                                             <li><a href="https://vi.wordpress.org/">WordPress.org</a></li>
                                         </ul>

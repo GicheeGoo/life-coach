@@ -8,8 +8,13 @@ $kinds: (
     'p': 'padding',
     'm': 'margin'
 );
+$sizes: (
+    'w': 'width',
+    'h': 'height'
+);
 
 $spacings: (
+    "auto": auto,
     "px": 1px,
     "0": 0,
     "0\\.5": 0.125rem,
@@ -47,9 +52,39 @@ $spacings: (
     "96": 24rem,
 );
 
+@each $key, $value in $sizes {
+    .#{$key}-full {
+        #{$value}: 100%;
+    }
+
+    $size-value: 100vw;
+
+    @if ($key =='h') {
+        $size-value: 100vh;
+    }
+
+    .#{$key}-screen {
+        #{$value}: #{$size-value};
+    }
+
+    .#{$key}-max {
+        #{$value}: max-content;
+    }
+
+    .#{$key}-min {
+        #{$value}: min-content;
+    }
+}
+
 @each $s-key, $s-value in $spacings {
     :root {
         --spacing-#{$s-key}: #{$s-value};
+    }
+
+    @each $key, $value in $sizes {
+        .#{$key}-#{$s-key} {
+            #{$value}: var(--spacing-#{$s-key});
+        }
     }
 
     @each $k-key, $k-value in $kinds {
@@ -72,5 +107,9 @@ $spacings: (
                 #{$k-value}-#{$d-value}: var(--spacing-#{$s-key});
             }
         }
+    }
+
+    .gap-#{$s-key} {
+        gap: var(--spacing-#{$s-key});
     }
 }

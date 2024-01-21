@@ -1,0 +1,15 @@
+.header {
+    .header-content {
+        z-index: 1;
+        height: 70px;
+    }
+
+    a {
+        transition: .3s color;
+
+        &.active,
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}

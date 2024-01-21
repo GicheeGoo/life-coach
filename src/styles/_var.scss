@@ -1,0 +1,18 @@
+@import './flex';
+@import './font';
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.pointer-none {
+    pointer-events: none;
+}
+
+.color-primary {
+    color: var(--primary-color);
+}

@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"@rsuite/icons": "^1.0.3",
+		"clsx": "^2.1.0",
 		"preact": "^10.13.1",
 		"preact-iso": "^2.3.2",
 		"preact-render-to-string": "^6.3.1",

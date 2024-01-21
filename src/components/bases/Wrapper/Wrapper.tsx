@@ -1,25 +1,28 @@
-import { CSSProperties, FC } from "preact/compat";
+import { CSSProperties, FC, PropsWithChildren, forwardRef } from "preact/compat";
 
 type WrapperProps = {
+    wrapperClassName?: string,
     className?: string,
     style?: CSSProperties
 }
 
-export const Wrapper: FC<WrapperProps> = props =>
+export const Wrapper = forwardRef<HTMLDivElement, PropsWithChildren<WrapperProps>>((props, ref) =>
 {
-    const { className, style, children } = props;
+    const { wrapperClassName, className, style, children } = props;
 
     return (
-        <div
-            className={className}
-                style={{
-                width: 1200,
-                maxWidth: '100%',
-                margin: 'auto',
-                ...style
-            }}
-        >
-            {children}
+        <div ref={ref} className={wrapperClassName}>
+            <div
+                className={className}
+                    style={{
+                    width: 1200,
+                    maxWidth: '100%',
+                    margin: 'auto',
+                    ...style
+                }}
+            >
+                {children}
+            </div>
         </div>
     )
-}
+})
