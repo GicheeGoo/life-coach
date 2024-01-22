@@ -53,11 +53,10 @@ export const SectionC: FC<HomeSection> = ({ className }) =>
                         appearance='primary'
                         color='red'
                         size='lg'
+                        href={ROUTE_URL.blog}
                         rounded
                     >
-                        <a href={ROUTE_URL.blog}>
-                            Xem tất cả
-                        </a>
+                        Xem tất cả
                     </Button>
                 </div>
             </div>
@@ -101,12 +100,11 @@ const ShortPost: FC<ShortPostProps> = props =>
                     appearance='primary'
                     color='red'
                     size='lg'
+                    href={to}
                     rounded
                 >
-                    <a className='link-dark' href={to}>
-                        Xem thêm
-                        <Right className='ml-2'/>
-                    </a>
+                    Xem thêm
+                    <Right className='ml-2'/>
                 </Button>
             </div>
         </div>

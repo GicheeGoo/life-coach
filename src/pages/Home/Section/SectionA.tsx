@@ -28,14 +28,13 @@ export const SectionA: FC<HomeSection> = ({ className }) => {
 
                     <Button
                         className='section-btn'
+                        href={course.to}
                         appearance='primary'
                         color='red'
                         size='lg'
                     >
-                        <a href={course.to}>
-                            TÌM HIỂU NGAY
-                            <ArrowRight className='ml-4'/>
-                        </a>
+                        TÌM HIỂU NGAY
+                        <ArrowRight className='ml-4'/>
                     </Button>
 
                     <h6 className='section-title' style={{ marginTop: '5rem' }}>AS FEATURED IN:</h6>

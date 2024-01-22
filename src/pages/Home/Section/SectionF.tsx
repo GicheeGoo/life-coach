@@ -49,11 +49,10 @@ export const SectionF: FC<HomeSection> = ({ className }) =>
                     appearance='primary'
                     color='red'
                     size='lg'
+                    href={ROUTE_URL.store}
                     rounded
                 >
-                    <a href={ROUTE_URL.store}>
-                        Xem tất cả
-                    </a>
+                    Xem tất cả
                 </Button>
             </div>
 
