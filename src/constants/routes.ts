@@ -2,7 +2,7 @@ export const ROUTE_URL = {
 	home: '/',
 	blog: '/blog',
 	gein: '/gein',
-	course: '/khoa-hoc',
+	course: '/course',
 	store: '/store',
 }
 

@@ -8,6 +8,7 @@ import { Contacts } from '@/components/apps/Contacts/Contacts';
 
 import { Home } from '@/pages/Home';
 import { Blog } from '@/pages/Blog/Blog';
+import { Course } from '@/pages/Course/Course';
 import { NotFound } from '@/pages/_404';
 import { ROUTE_URL } from '@/constants/routes';
 
@@ -24,6 +25,7 @@ export function App() {
 					<Router>
 						<Route path={ROUTE_URL.home} component={Home} />
 						<Route path={ROUTE_URL.blog} component={Blog} />
+						<Route path={ROUTE_URL.course} component={Course} />
 						<Route default component={NotFound} />
 					</Router>
 					<Footer />

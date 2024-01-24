@@ -25,9 +25,11 @@ export const Footer: FC = props =>
 {
     const { path } = useLocation();
 
+    const dark = [ROUTE_URL.home, ROUTE_URL.course]
+
     return (
         <>
-            <Wrapper wrapperClassName={clsx('footer', path === ROUTE_URL.home && 'dark')}>
+            <Wrapper wrapperClassName={clsx('footer', dark.includes(path) && 'dark')}>
                 <div className='footer-content flex gap-8 py-12'>
                     <div className='flex-2'>
                         <Image className='mb-4' src={logo} width={101} />

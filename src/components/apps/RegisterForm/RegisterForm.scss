@@ -1,0 +1,16 @@
+.register-form {
+    width: 100%;
+
+    .rs-form-group {
+        display: flex;
+    }
+
+    .rs-form-control-wrapper {
+        flex: 1;
+
+        .rs-input {
+            width: 100%;
+            border-radius: .5rem;
+        }
+    }
+}

@@ -1,4 +1,7 @@
-import { CSSProperties, FC, PropsWithChildren, forwardRef } from "preact/compat";
+import { CSSProperties, PropsWithChildren, forwardRef } from "preact/compat";
+import clsx from "clsx";
+
+import './Wrapper.scss';
 
 type WrapperProps = {
     wrapperClassName?: string,
@@ -13,13 +16,8 @@ export const Wrapper = forwardRef<HTMLDivElement, PropsWithChildren<WrapperProps
     return (
         <div ref={ref} className={wrapperClassName}>
             <div
-                className={className}
-                    style={{
-                    width: 1200,
-                    maxWidth: '100%',
-                    margin: 'auto',
-                    ...style
-                }}
+                className={clsx('wrapper-content', className)}
+                style={style}
             >
                 {children}
             </div>
