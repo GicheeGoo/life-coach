@@ -19,7 +19,7 @@ const goals = [
 export const MapForSuccess: FC<CourseSectionProps> = ({ className }) =>
 {
     return (
-        <Wrapper wrapperClassName='mfs bg' className={clsx('flex gap-12 w-full', className)}>
+        <Wrapper wrapperClassName='mfs bg bg-2' className={clsx('flex gap-12 w-full', className)}>
             <div className='flex-1'>
                 <h2 className='mt-5'>Khóa học Thiết kế bản đồ thành công Map For Success</h2>
                 <h3 className='mb-0'>Giới thiệu khóa học:</h3>

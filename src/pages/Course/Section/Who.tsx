@@ -14,7 +14,8 @@ export const Who: FC<CourseSectionProps> = ({ className }) =>
             }}>
                 Đứng lớp đào tạo chuyên sâu chính là 3 Founder của GEIN Academy – bởi vì GEIN muốn truyền tải được kiến thức, kinh nghiệm chuẩn nhất, những thông điệp mạnh mẽ nhất, truyền cảm hứng nhất bởi những tấm gương vượt khó của 3 Founder đại diện theo 3 gốc Đạo Đức – Nghị Lực – Trí Tuệ. Giúp học viên có thể chuyển hóa ngay trong lớp học
             </p>
-            <div className='separator sm'/>
+            <div className='separator sm' />
+            <div className='h-96' />
         </Wrapper>
     )
 }

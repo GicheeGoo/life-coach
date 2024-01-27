@@ -1,6 +1,6 @@
 import { FC } from "preact/compat";
 
-export type PostProps = {
+export type ShortPostProps = {
     title: string,
     description: string,
     image: string,
@@ -9,7 +9,7 @@ export type PostProps = {
     imageAlt: string
 }
 
-export const Post = (props: PostProps) => {
+export const ShortPost = (props: ShortPostProps) => {
     const { title, description, image, datePublished, link, imageAlt } = props;
 
     return (

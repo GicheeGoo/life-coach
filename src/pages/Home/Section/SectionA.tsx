@@ -20,12 +20,12 @@ export const SectionA: FC<HomeSection> = ({ className }) => {
                     <div className='section-title'>TRUYỀN NGHỀ LIFE COACH</div>
                     <h1>Nghề Life Coach</h1>
 
-                    <div className='section-content'>
+                    <p>
                         Bất cứ ai già trẻ – giàu nghèo đều có những nỗi sợ, những vấn đề riêng của họ. Trở thành LifeCoach giúp họ giải quyết các vấn đề trong cuộc sống, sự nghiệp, mối quan hệ, sức khỏe.
                         <br />
                         Học nghề life coach để giúp mình giúp đời!
-                    </div>
-
+                    </p>
+                
                     <Button
                         className='section-btn'
                         href={course.to}

@@ -1,6 +1,6 @@
 import { FC } from "preact/compat";
 
-import { Post } from "./Post";
+import { ShortPost } from "./ShortPost";
 
 import './Blog.scss';
 
@@ -45,7 +45,7 @@ export const Blog: FC = () => {
                                 <div class="ast-row">
                                     {blogs.map((blog, index) => {
                                         return (
-                                            <Post
+                                            <ShortPost
                                                 key={index + ''}
                                                 title={blog.title}
                                                 description={blog.description}

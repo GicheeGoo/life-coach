@@ -6,6 +6,7 @@ import { Solution } from "./Section/Solution";
 import { MapForSuccess } from "./Section/MapForSuccess";
 import { Details } from "./Section/Details";
 import { Who } from "./Section/Who";
+import { Benefit } from "./Section/Benefit";
 
 import './Course.scss';
 
@@ -25,6 +26,7 @@ export const Course: FC = props =>
             <MapForSuccess className={className} />
             <Details className={className} />
             <Who className={className} />
+            <Benefit className={className} />
         </div>
     )
 }

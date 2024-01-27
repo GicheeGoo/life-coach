@@ -1,6 +1,14 @@
 @import './flex';
 @import './font';
 
+.bg-light {
+    background-color: var(--bg-color);
+}
+
+.bg-semi-light {
+    background-color: var(--sub-color);
+}
+
 .overflow-hidden {
     overflow: hidden;
 }

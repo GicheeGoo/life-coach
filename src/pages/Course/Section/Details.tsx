@@ -44,7 +44,7 @@ const details = [
 export const Details: FC<CourseSectionProps> = ({ className }) =>
 {
     return (
-        <Wrapper wrapperClassName='bg bg-2' className={clsx('details w-full', className)}>
+        <Wrapper wrapperClassName='bg bg-1' className={clsx('details w-full', className)}>
             <div className='w-full flex flex-col items-center'>
                 <h2 className='title'>NỘI DUNG KHOÁ HỌC</h2>
                 <div className='separator bold sm' />

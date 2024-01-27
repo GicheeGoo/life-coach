@@ -46,6 +46,7 @@ a {
 }
 
 button {
+
 	a,
 	a:hover,
 	a:focus {
@@ -137,4 +138,22 @@ textarea {
 	box-shadow: none;
 	box-sizing: border-box;
 	transition: all .2s linear;
+}
+
+blockquote {
+	margin: 0;
+	position: relative;
+	padding: 1px 0 1px var(--spacing-8);
+	font-style: italic;
+	font-size: 1.1rem;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: .3rem;
+		height: 100%;
+		background-color: rgba(0, 0, 0, .05);
+	}
 }
