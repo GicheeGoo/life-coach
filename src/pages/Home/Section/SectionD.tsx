@@ -4,10 +4,11 @@ import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
 import { HomeSection } from "..";
 
-import listing1 from '@/assets/listing-1.png';
-import listing2 from '@/assets/listing-2.jpeg';
-import listing3 from '@/assets/listing-3.png';
-import listing4 from '@/assets/listing-4.png';
+import listing1 from '@/assets/imageWithCustomer/customer-9.jpg';
+import listing2 from '@/assets/imageWithCustomer/customer-18.jpg';
+import listing3 from '@/assets/imageWithCustomer/customer-16.jpg';
+import listing4 from '@/assets/imageWithCustomer/customer-8.jpg';
+import listing5 from '@/assets/imageWithCustomer/customer-2.jpg';
 
 const list = [
     'Định hướng công việc, sự nghiệp phù hợp',
@@ -32,7 +33,7 @@ export const SectionD: FC<HomeSection> = ({ className }) =>
                     ))}
                 </div>
                 <div className='flex flex-1 gap-8'>
-                    <ListImage srcs={[listing1, listing2]} />
+                    <ListImage srcs={[listing1, listing2, listing5]} />
                     <ListImage srcs={[listing3, listing4]} />
                 </div>
             </div>
