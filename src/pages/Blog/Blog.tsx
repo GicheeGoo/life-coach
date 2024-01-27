@@ -1,34 +1,9 @@
 import { FC } from "preact/compat";
 
 import { ShortPost } from "./ShortPost";
+import { posts } from "./posts";
 
 import './Blog.scss';
-
-const blogs = [{
-    title: 'Kid Talent Map là gì? Bản đồ thấu hiểu con có tốt không?',
-    description: 'Với nỗi trăn trở đau đáu giúp cho hàng triệu gia đình Việt nuôi dạy con tốt hơn, KID TALENT MAP đã ra đời nhằm giúp cha mẹ hiểu được xu hướng tính cách, năng lực nổi bật của con để có thể nói chuyện, giao tiếp, định hướng trẻ […]',
-    image: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
-    datePublished: '22/08/2023',
-    link: `/gein/kid-talent-map/`,
-    imageAlt: 'Kid Talent Map'
-},
-{
-    title: 'GEIN Academy là gì? Sự thật Numerology tại GEIN Group',
-    description: 'Mấy năm gần đây, GEIN Academy hay GEIN Group (đọc tương tự: GHÊN) đang nổi lên như một hiện tượng trong giới kinh doanh – đặc biệt là kinh doanh giáo dục. Mới sự phát triển, lan tỏa mạnh mẽ ấy rất nhiều người đang thắc mắc GEIN Academy là',
-    image: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
-    datePublished: '20/04/2023',
-    link: `/gein/kid-talent-map/`,
-    imageAlt: 'Banner Web Nghề Life Coach'
-},
-{
-    title: 'Map For Success là gì? Bản đồ thành công lừa đảo, đa cấp có thật không?',
-    description: 'Trong xã hội ngày càng phát triển nhanh như hiện nay, việc thấu hiểu bản thân là điều cực kỳ quan trọng. Hiểu mình thì mới biết được cách để đạt được những thành công trong cuộc sống nhanh nhất, có những mối quan hệ hòa hợp chất lượng và',
-    image: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
-    datePublished: '20/03/2023',
-    link: '/gein/kid-talent-map/',
-    imageAlt: 'Map For Success'
-}
-]
 
 export const Blog: FC = () => {
     const handleChangeSearchKey = (event) => {
@@ -43,16 +18,16 @@ export const Blog: FC = () => {
                         <div id="primary" class="content-area primary ast-grid-2">
                             <main id="main" class="site-main">
                                 <div class="ast-row">
-                                    {blogs.map((blog, index) => {
+                                    {posts.map((blog, index) => {
                                         return (
                                             <ShortPost
                                                 key={index + ''}
                                                 title={blog.title}
                                                 description={blog.description}
-                                                image={blog.image}
-                                                datePublished={blog.datePublished}
-                                                link={blog.link}
-                                                imageAlt={blog.imageAlt}
+                                                image={blog.thumbnail}
+                                                datePublished={blog.createdDate}
+                                                link={blog.to}
+                                                imageAlt={blog.title}
                                             />
                                         )
                                     })}

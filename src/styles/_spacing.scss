@@ -54,7 +54,7 @@ $spacings: (
 
 @each $key, $value in $sizes {
     .#{$key}-full {
-        #{$value}: 100%;
+        #{$value}: 100% !important;
     }
 
     $size-value: 100vw;
@@ -64,15 +64,15 @@ $spacings: (
     }
 
     .#{$key}-screen {
-        #{$value}: #{$size-value};
+        #{$value}: #{$size-value} !important;
     }
 
     .#{$key}-max {
-        #{$value}: max-content;
+        #{$value}: max-content !important;
     }
 
     .#{$key}-min {
-        #{$value}: min-content;
+        #{$value}: min-content !important;
     }
 }
 
@@ -83,33 +83,33 @@ $spacings: (
 
     @each $key, $value in $sizes {
         .#{$key}-#{$s-key} {
-            #{$value}: var(--spacing-#{$s-key});
+            #{$value}: var(--spacing-#{$s-key}) !important;
         }
     }
 
     @each $k-key, $k-value in $kinds {
         .#{$k-key}-#{$s-key} {
-            #{$k-value}: var(--spacing-#{$s-key});
+            #{$k-value}: var(--spacing-#{$s-key}) !important;
         }
 
         .#{$k-key}x-#{$s-key} {
-            #{$k-value}-left: var(--spacing-#{$s-key});
-            #{$k-value}-right: var(--spacing-#{$s-key});
+            #{$k-value}-left: var(--spacing-#{$s-key}) !important;
+            #{$k-value}-right: var(--spacing-#{$s-key}) !important;
         }
 
         .#{$k-key}y-#{$s-key} {
-            #{$k-value}-top: var(--spacing-#{$s-key});
-            #{$k-value}-bottom: var(--spacing-#{$s-key});
+            #{$k-value}-top: var(--spacing-#{$s-key}) !important;
+            #{$k-value}-bottom: var(--spacing-#{$s-key}) !important;
         }
 
         @each $d-key, $d-value in $directions {
             .#{$k-key}#{$d-key}-#{$s-key} {
-                #{$k-value}-#{$d-value}: var(--spacing-#{$s-key});
+                #{$k-value}-#{$d-value}: var(--spacing-#{$s-key}) !important;
             }
         }
     }
 
     .gap-#{$s-key} {
-        gap: var(--spacing-#{$s-key});
+        gap: var(--spacing-#{$s-key}) !important;
     }
 }

@@ -12,10 +12,7 @@ export const Mark: FC<Detail> = props =>
         const str = content[0] as string;
         let string = str;
 
-        mark.forEach((item, index) =>
-        {
-            string = str.replace(item, signal);            
-        })
+        mark.forEach(item => string = string.replace(item, signal))
 
         return string;
     }
@@ -28,11 +25,18 @@ export const Mark: FC<Detail> = props =>
 
         return array.map(word =>
         {
-            if (word === signal)
+            if (word.includes(signal))
             {
+                const splitted = word.split(signal);
                 const newWord = mark[count];
                 count++;
-                return <div className='color-primary'>{newWord}</div>;
+                return (
+                    <>
+                        {splitted[0]}
+                        <span className='color-primary'>{newWord}</span>
+                        {splitted[1]}
+                    </>
+                );
             }
             
             return word;

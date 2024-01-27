@@ -1,5 +1,5 @@
 import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
-import PerfectScrollbar from 'react-perfect-scrollbar'
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { Header } from '@/components/apps/Header/Header';
 import { Footer } from '@/components/apps/Footer/Footer';
@@ -10,6 +10,10 @@ import { Home } from '@/pages/Home';
 import { Blog } from '@/pages/Blog/Blog';
 import { Course } from '@/pages/Course/Course';
 import { NotFound } from '@/pages/_404';
+
+import { Post } from '@/pages/Blog/Post/Post';
+
+import { posts } from '@/pages/Blog/posts';
 import { ROUTE_URL } from '@/constants/routes';
 
 import '@/styles/all.scss'
@@ -17,6 +21,14 @@ import 'rsuite/dist/rsuite-no-reset.min.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export function App() {
+	const Posts: any = posts.map(post => (
+		<Route
+			key={post.to}
+			path={post.to}
+			component={() => <Post {...post} />}
+		/>
+	))
+
 	return (
 		<LocationProvider>
 			<div className='overflow-hidden w-screen h-screen'>
@@ -26,6 +38,7 @@ export function App() {
 						<Route path={ROUTE_URL.home} component={Home} />
 						<Route path={ROUTE_URL.blog} component={Blog} />
 						<Route path={ROUTE_URL.course} component={Course} />
+						{Posts}
 						<Route default component={NotFound} />
 					</Router>
 					<Footer />

@@ -9,7 +9,7 @@ export const Video: FC<Detail> = props =>
     const { content } = props;
 
     return (
-        <Ratio width={1200} height={675}>
+        <Ratio className='mb-4' width={1200} height={675}>
             <iframe
                 src={content[0] as string}
                 frameborder={0}

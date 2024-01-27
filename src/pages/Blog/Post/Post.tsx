@@ -9,6 +9,7 @@ import { Mark } from "../Content/Mark";
 import { Video } from "../Content/Video";
 
 import './Post.scss';
+import { Ads } from "../Content/Ads";
 
 export const Post: FC<PostType> = props =>
 {
@@ -40,18 +41,19 @@ export const Post: FC<PostType> = props =>
             case Content.m: return <Mark {...detail} />
             case Content.v: return <Video {...detail} />
             case Content.q: return (
-                <blockquote>
+                <blockquote className='mb-4'>
                     {content.map(((c, index) => <p key={index}>{c}</p>))}
                 </blockquote>
             )
-            // case Content.ads: return 
+            case Content.ads: return <Ads />
+            default: return content;
         }
 
     }
 
     return (
         <Wrapper
-            wrapperClassName='blog-wrapper px-4'
+            wrapperClassName='blog-wrapper px-4 pt-12'
             className='blog p-12 bg-light'
         >
             <h1>

@@ -41,7 +41,7 @@ export const posts: Post[] = [
         description: 'Với nỗi trăn trở đau đáu giúp cho hàng triệu gia đình Việt nuôi dạy con tốt hơn, KID TALENT MAP đã ra đời nhằm giúp cha mẹ hiểu được xu hướng tính cách, năng lực nổi bật của con để có thể nói chuyện, giao tiếp, định hướng trẻ […]',
         thumbnail: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
         createdDate: '22/08/2023',
-        to: `/gein/kid-talent-map/`,
+        to: `/gein/kid-talent-map`,
         author: coach.name,
         details: [
             {
@@ -65,10 +65,6 @@ export const posts: Post[] = [
                 type: Content.m,
                 content: ['Đây là một dự án nghiên cứu khoa học của GEIN Academy dựa trên nền tảng của Thần số học Pythagoras. Kết hợp với đó là GEIN đã nghiên cứu và chứng thực từ hơn 30.000 Bản đồ thấu hiểu bản thân Map For Success của các bậc cha mẹ tại Việt Nam. Rồi mới đúc kết lên tấm bản đồ Kid Talent Map cho trẻ em.'],
                 mark: ['GEIN Academy']
-            },
-            {
-                type: Content.s,
-                content: ['Có thể bạn chưa biết:']
             },
             {
                 type: Content.s,

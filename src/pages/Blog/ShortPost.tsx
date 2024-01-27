@@ -16,7 +16,7 @@ export const ShortPost = (props: ShortPostProps) => {
         <article class="post type-post status-publish format-standard has-post-thumbnail hentry category-gein ast-grid-common-col ast-full-width ast-article-post ast-width-md-6 ast-archive-post" itemtype="https://schema.org/CreativeWork" >
             <div class="ast-post-format- blog-layout-1 ast-article-inner ast-no-date-box">
                 <div class="post-content ast-grid-common-col">
-                    <h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="https://nghelifecoach.com/gein/kid-talent-map/" rel="bookmark">{title}</a></h2>
+                    <h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href={link} rel="bookmark">{title}</a></h2>
                     <header class="entry-header ast-blog-single-element ast-blog-meta-container">
                         <div class="entry-meta">
                             <span class="ast-taxonomy-container cat-links default">
