@@ -1,0 +1,19 @@
+.callout {
+    color: var(--bg-color);
+    --callout-bg: var(--rs-green-500);
+
+    &-warning {
+        --callout-bg: var(--rs-yellow-500);
+    }
+
+    &-danger {
+        --callout-bg: var(--rs-red-500);
+    }
+
+    &-info {
+        --callout-bg: var(--rs-cyan-500);
+    }
+
+    background-color: var(--callout-bg);
+    border-radius: var(--spacing-2);
+}
