@@ -1,9 +1,12 @@
-import { FC, Fragment } from "preact/compat";
-import { Detail } from "../posts";
+import { FC, Fragment, ReactNode } from "preact/compat";
+import { Detail } from "@/utils/generateContent";
 
-export const Mark: FC<Detail> = props =>
+type MarkProps = Pick<Detail, 'content' | 'mark'> &
+    { onRender?: (mark: string) => ReactNode }
+
+export const Mark: FC<MarkProps> = props =>
 {
-    const { content, mark = [] } = props;
+    const { content, mark = [], onRender } = props;
 
     const signal = '%x%';
 
@@ -33,7 +36,7 @@ export const Mark: FC<Detail> = props =>
                 return (
                     <>
                         {splitted[0]}
-                        <span className='color-primary'>{newWord}</span>
+                        {onRender?.(newWord) ?? <span className={'color-primary'}>{newWord}</span>}
                         {splitted[1]}
                     </>
                 );

@@ -2,6 +2,7 @@
     --section-primary-color: #291d95;
     --section-secondary-color: #0170b9;
     --section-third-color: rgba(220, 184, 133, 1);
+    --section-fourth-color: rgba(230, 127, 2, 1);
 
     --section-color: var(--main-color);
 
@@ -21,7 +22,8 @@
         }
 
         &-2 {
-            background: url('../../assets/course-bg-2.jpeg');
+            background-image: url('../../assets/course-bg-2.jpeg');
+            color: rgba(var(--bg), 1);
         }
     }
 
@@ -29,7 +31,11 @@
         color: var(--section-primary-color);
     }
 
-    .issue {
+    .issue,
+    .who,
+    .bonus,
+    .stories,
+    .faq {
         --section-color: var(--section-primary-color);
     }
 
@@ -41,10 +47,6 @@
         -webkit-text-fill-color: transparent;
     }
 
-    .mfs {
-        color: rgba(var(--bg), 1);
-    }
-
     .details {
         --section-color: var(--section-third-color);
 
@@ -52,10 +54,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
-    }
-
-    .who {
-        --section-color: var(--section-primary-color);
     }
 
     .benefit {
@@ -77,6 +75,21 @@
             right: 0;
             background-color: rgba(247, 243, 245, .5);
             z-index: 1;
+        }
+    }
+
+    .register {
+        --section-color: rgba(255, 234, 0, 1);
+    }
+
+    .toc {
+        a {
+            color: var(--main-color);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--primary-color);
+            }
         }
     }
 

@@ -2,9 +2,9 @@ import { FC } from "preact/compat";
 
 import { Ratio } from "@/components/bases/Ratio/Ratio";
 
-import { Detail } from "../posts";
+import { Detail } from "@/utils/generateContent";
 
-export const Video: FC<Detail> = props =>
+export const Video: FC<Pick<Detail, 'content'>> = props =>
 {
     const { content } = props;
 

@@ -1,5 +1,5 @@
 import { FC } from "preact/compat";
-import { Detail } from "../posts";
+import { Detail } from "@/utils/generateContent";
 
 export const List: FC<Detail> = props =>
 {

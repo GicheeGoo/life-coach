@@ -1,29 +1,6 @@
-import { ReactNode } from "preact/compat";
-
 import { details as company } from "@/constants/company";
 import { details as coach } from "@/constants/coach";
-
-export enum Content {
-    s = 'section',
-    ss = 'semi-section',
-    q = 'quote',
-    i = 'image',
-    v = 'video',
-    p = 'paragraph',
-    l = 'list',
-    b = 'bold',
-    ads = 'ads',
-    m = 'mark',
-    c = 'custom'
-}
-
-export type Detail = {
-    type: Content,
-    content?: ReactNode[],
-    mark?: string[],
-    style?: string,
-    alt?: string,
-}
+import { Content, Detail } from "@/utils/generateContent";
 
 export type Post = {
     title: string,

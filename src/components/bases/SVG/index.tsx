@@ -16,6 +16,15 @@ export * from './Downtrend';
 export * from './PowerButton';
 export * from './Fish';
 export * from './Sitemap';
+export * from './Number1';
+export * from './Number2';
+export * from './Number3';
+export * from './Number4';
+export * from './Number5';
+export * from './Number6';
+export * from './UserBoard';
+export * from './Gradurate';
+export * from './Book';
 
 export type SVGProps = {
     className?: string   

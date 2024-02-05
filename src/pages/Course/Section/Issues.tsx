@@ -74,7 +74,7 @@ export const Issues: FC<CourseSectionProps> = ({ className }) =>
     }
 
     return (
-        <Wrapper className={clsx('issue', className)}>
+        <Wrapper className='issue my-8'>
             <div className='flex flex-col items-center'>
                 <h2 className='title'>8 VẤN ĐỀ AI CŨNG TỪNG TRẢI QUA TRONG CUỘC ĐỜI</h2>
                 <div className='separator dashed' />
@@ -96,9 +96,7 @@ const Issue: FC<IssueProps> = props =>
     const { icon: IssueIcon, title, content } = props;
 
     return (
-        <div
-            className='flex flex-col items-center p-4'
-        >
+        <div className='flex flex-col items-center px-2 mb-4'>
             <div style={{ textAlign: 'center' }}>
                 <IssueIcon 
                     width={30}

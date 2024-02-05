@@ -1,9 +1,16 @@
 import { FC, HTMLAttributes, TargetedEvent } from "preact/compat";
+import clsx from "clsx";
 
 import unknown from '@/assets/unknown.png'
 
-export const Image: FC<HTMLAttributes<HTMLImageElement>> = props =>
+import './Image.scss';
+
+export const Image: FC<HTMLAttributes<HTMLImageElement> & { rounded?: boolean }> = props =>
 {
+    const { className, rounded, ...imgProps } = props;
+
+    const classes = clsx('img', className, rounded && 'rounded');
+
     const handleError = (event: TargetedEvent<HTMLImageElement>) =>
     {
         const target = event.target as HTMLImageElement;
@@ -13,6 +20,10 @@ export const Image: FC<HTMLAttributes<HTMLImageElement>> = props =>
     }
 
     return (
-        <img onError={handleError} {...props} />
+        <img
+            className={classes}
+            onError={handleError}
+            {...imgProps}
+        />
     )
 }

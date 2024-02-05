@@ -1,80 +1,69 @@
 import { FC, Fragment } from "preact/compat";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
+import { Image } from "@/components/bases/Image/Image";
 
-import { Content, Post as PostType, Detail } from "../posts";
-import { Image } from "../Content/Image";
-import { List } from "../Content/List";
-import { Mark } from "../Content/Mark";
-import { Video } from "../Content/Video";
+import { Post as PostType } from "../posts";
+
+import { generateContent } from "@/utils/generateContent";
+import { details as coach } from '@/constants/coach';
+
+import avatar from '@/assets/avatar.png';
 
 import './Post.scss';
-import { Ads } from "../Content/Ads";
 
 export const Post: FC<PostType> = props =>
 {
     const { title, author, createdDate, details } = props;
 
-    const renderDetail = (detail: Detail) =>
-    {
-        const { type, content, style } = detail;
-
-        switch (type)
-        {
-            case Content.s:
-                return content.map((c, index) => <h2 key={index}>{c}</h2>);
-            case Content.ss:
-                return content.map((c, index) => <h3 key={index}>{c}</h3>);
-            case Content.p:
-                return content.map((c, index) => <p key={index}>{c}</p>);
-            case Content.b:
-                return content.map((c, index) => (
-                    <p
-                        key={index}
-                        style={{ fontStyle: style }}
-                    >
-                        <strong>{c}</strong>
-                    </p>
-                ));
-            case Content.i: return <Image {...detail} />
-            case Content.l: return <List {...detail} />
-            case Content.m: return <Mark {...detail} />
-            case Content.v: return <Video {...detail} />
-            case Content.q: return (
-                <blockquote className='mb-4'>
-                    {content.map(((c, index) => <p key={index}>{c}</p>))}
-                </blockquote>
-            )
-            case Content.ads: return <Ads />
-            default: return content;
-        }
-
-    }
-
     return (
-        <Wrapper
-            wrapperClassName='blog-wrapper px-4 pt-12'
-            className='blog p-12 bg-light'
-        >
-            <h1>
-                {title}
-            </h1>
+        <div className='blog-wrapper py-12'>
+            <Wrapper
+                wrapperClassName='px-4'
+                className='blog p-12 bg-light'
+            >
+                <h1>
+                    {title}
+                </h1>
 
-            <div className="flex gap-2 color-primary mb-4">
-                <a href='/#comment'>
-                    Leave a Comment
-                </a>
-                /
-                <div>By <a href={`/author/${author}`}>{author}</a></div>
-                /
-                {createdDate}
-            </div>
+                <div className="flex gap-2 color-primary mb-4">
+                    <a href='/#comment'>
+                        Leave a Comment
+                    </a>
+                    /
+                    <div>By <a href={`/author/${author}`}>{author}</a></div>
+                    /
+                    {createdDate}
+                </div>
 
-            {details.map((detail, index) => (
-                <Fragment key={index}>
-                    {renderDetail(detail)}
-                </Fragment>
-            ))}
-        </Wrapper>
+                {details.map((detail, index) => (
+                    <Fragment key={index}>
+                        {generateContent(detail)}
+                    </Fragment>
+                ))}
+            </Wrapper>
+
+            <Wrapper>
+                <div className='p-12 mt-12 bg-light'>
+                    <h3 className='mt-0 mb-4'>About The Author</h3>
+                    <div className='flex gap-4 items-center'>
+                        <div className='flex-none'>
+                            <Image
+                                className='avatar'
+                                src={avatar}
+                                width={100}
+                                height={100}
+                                rounded
+                            />
+                        </div>
+
+                        <div>
+                            <h4 className='color-primary mt-0'>{coach.name}</h4>
+                            <p>Chuyên gia luận giải bản đồ Map For Success và Life Coach định hướng cuộc sống, sự nghiệp, giúp khách hàng thấu hiểu bản thân, thiết lập mục tiêu và vượt qua rào cản để đạt được các mục tiêu trong cuộc sống!</p>
+                        </div>
+                    </div>
+                </div>
+            </Wrapper>
+        </div>
     )
 }

@@ -1,6 +1,6 @@
 import { FC } from "preact/compat";
-import { Detail } from "../posts";
 import { Image as BaseImage } from "@/components/bases/Image/Image";
+import { Detail } from "@/utils/generateContent";
 
 export const Image: FC<Detail> = props =>
 {
