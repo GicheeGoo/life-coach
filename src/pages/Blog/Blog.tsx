@@ -17,7 +17,7 @@ export const Blog: FC = () => {
                     <div class={'flex-container'}>
                         <div id="primary" class="content-area primary ast-grid-2">
                             <main id="main" class="site-main">
-                                <div class="ast-row">
+                                <div class="ast-row gap-4">
                                     {posts.map((blog, index) => {
                                         return (
                                             <ShortPost

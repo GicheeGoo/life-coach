@@ -1,7 +1,8 @@
 import { FC } from "preact/compat";
+import { MotionConfig } from "framer-motion";
 
 import { Intro } from "./Section/Intro";
-import { Issue } from "./Section/Issue";
+import { Issues } from "./Section/Issues";
 import { Solution } from "./Section/Solution";
 import { MapForSuccess } from "./Section/MapForSuccess";
 import { Details } from "./Section/Details";
@@ -19,14 +20,16 @@ export const Course: FC = props =>
     const className = 'px-24 py-8 mb-12';
 
     return (
-        <div className='course pb-40'>
+        <MotionConfig transition={{ duration: .3, delay: .1 }}>
+            <div className='course pb-40'>
             <Intro className={className} />
-            <Issue className={className} />
+            <Issues className={className} />
             <Solution className={className} />
             <MapForSuccess className={className} />
             <Details className={className} />
             <Who className={className} />
             <Benefit className={className} />
-        </div>
+            </div>
+        </ MotionConfig>
     )
 }
