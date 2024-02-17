@@ -2,6 +2,37 @@ import { details as company } from "@/constants/company";
 import { details as coach } from "@/constants/coach";
 import { Content, Detail } from "@/utils/generateContent";
 
+import ktmThumb from './images/KidTalentMap/ktm-thumb.webp'
+import ktm2 from './images/KidTalentMap/ktm-2.webp'
+import ktm3 from './images/KidTalentMap/ktm-3.webp'
+
+import gaThumb from './images/GEINAcademy/ga-thumb.webp'
+import ga2 from './images/GEINAcademy/ga-2.webp'
+import ga3 from './images/GEINAcademy/ga-3.jpeg'
+import ga4 from './images/GEINAcademy/ga-4.png'
+import ga5 from './images/GEINAcademy/ga-5.jpeg'
+import ga6 from './images/GEINAcademy/ga-6.jpeg'
+import ga7 from './images/GEINAcademy/ga-7.jpeg'
+import ga8 from './images/GEINAcademy/ga-8.webp'
+import ga9 from './images/GEINAcademy/ga-9.jpeg'
+import ga10 from './images/GEINAcademy/ga-10.png'
+import ga11 from './images/GEINAcademy/ga-11.jpeg'
+
+import mfsThumb from './images/MapForSuccess/mfs-thumb.png';
+import mfs1 from './images/MapForSuccess/mfs-1.webp';
+import mfs2 from './images/MapForSuccess/mfs-2.png';
+import mfs3 from './images/MapForSuccess/mfs-3.jpeg';
+import mfs4 from './images/MapForSuccess/mfs-4.png';
+import mfs5 from './images/MapForSuccess/mfs-5.webp';
+import mfs6 from './images/MapForSuccess/mfs-6.webp';
+import mfs7 from './images/MapForSuccess/mfs-7.jpeg';
+import mfs8 from './images/MapForSuccess/mfs-8.webp';
+import mfs9 from './images/MapForSuccess/mfs-9.webp';
+import mfs10 from './images/MapForSuccess/mfs-10.webp';
+import mfs11 from './images/MapForSuccess/mfs-11.png';
+
+import adsImg from './images/ads/ads.png';
+
 export type Post = {
     title: string,
     description: string,
@@ -16,7 +47,7 @@ export const posts: Post[] = [
     {
         title: 'Kid Talent Map là gì? Bản đồ thấu hiểu con có tốt không?',
         description: 'Với nỗi trăn trở đau đáu giúp cho hàng triệu gia đình Việt nuôi dạy con tốt hơn, KID TALENT MAP đã ra đời nhằm giúp cha mẹ hiểu được xu hướng tính cách, năng lực nổi bật của con để có thể nói chuyện, giao tiếp, định hướng trẻ […]',
-        thumbnail: 'https://nghelifecoach.com/wp-content/uploads/2023/08/kid-talent-map.jpg.webp',
+        thumbnail: ktmThumb,
         createdDate: '22/08/2023',
         to: `/gein/kid-talent-map`,
         author: coach.name,
@@ -36,7 +67,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/kid-talent-map-2.png.webp'],
+                content: [ktm2],
             },
             {
                 type: Content.m,
@@ -109,7 +140,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/kid-talent-map-2.jpg.webp'],
+                content: [ktm3],
                 alt: 'Các chỉ số trong bản đồ thấu hiểu con Kid Talent Map'
             },
             {
@@ -186,7 +217,7 @@ export const posts: Post[] = [
         description: 'Mấy năm gần đây, GEIN Academy hay GEIN Group (đọc tương tự: GHÊN) đang nổi lên như một hiện tượng trong giới kinh doanh – đặc biệt là kinh doanh giáo dục. Mới sự phát triển, lan tỏa mạnh mẽ ấy rất nhiều người đang thắc mắc GEIN Academy là',
         createdDate: '20/04/2023',
         to: '/gein/gein-academy',
-        thumbnail: 'https://nghelifecoach.com/wp-content/uploads/2023/12/banner-web-nghe-lifecoach.jpg-1024x516.webp',
+        thumbnail: gaThumb,
         author: coach.name,
         details: [
             {
@@ -227,7 +258,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/04/gein-academy-voi-john-maxwell-trung-tam-hoi-nghi-quoc-gia.webp'],
+                content: [ga2],
                 alt: 'Chương trình GEIN Academy tổ chức cùng John Maxwell tại Trung tâm Hội nghị Quốc gia với hơn 3.500 người',
             },
             {
@@ -303,7 +334,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/04/nguyen-dieu-thu.jpg'],
+                content: [ga3],
                 alt: 'Cô Thu trong một buổi đào tạo sản phẩm'
             },
             {
@@ -332,7 +363,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/nguyen-thi-thach-thao.png'],
+                content: [ga4],
                 alt: 'Cô Thạch Thảo đào tạo sản phẩm'
             },
             {
@@ -359,7 +390,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/04/thay-lang-cong-dat.jpg'],
+                content: [ga5],
                 alt: 'Thầy Lang Công Đạt trong một khóa đào tạo của GEIN'
             },
             {
@@ -388,8 +419,8 @@ export const posts: Post[] = [
             {
                 type: Content.i,
                 content: [
-                    'https://nghelifecoach.com/wp-content/uploads/2023/12/sach-tai-gein.jpg',
-                    'https://nghelifecoach.com/wp-content/uploads/2023/12/sach-hanh-trinh-khac-ten-minh-len-da.jpg'
+                    ga6,
+                    ga7,
                 ]
             },
             {
@@ -427,7 +458,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/banner-web-nghe-lifecoach.jpg-1024x516.webp'],
+                content: [ga8],
                 alt: 'Một chương trình đào tạo của GEIN ACADEMY với Tiến sĩ Alok',
             },
             {
@@ -446,7 +477,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/coaching-map-for-sucess-mien-phi.jpg']
+                content: [ga9]
             },
             {
                 type: Content.p,
@@ -466,7 +497,7 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/map-for-success-nghe-lifecoach-9-1.png.png'],
+                content: [ga10],
                 alt: 'Bản đồ Map For Success với 17 chỉ số tại GEIN'
             },
             {
@@ -531,18 +562,27 @@ export const posts: Post[] = [
             },
             {
                 type: Content.i,
-                content: ['https://nghelifecoach.com/wp-content/uploads/2023/12/coaching-map-for-sucess-mien-phi.jpg'],
+                content: [ga11],
                 alt: 'Coaching chỉ số đường đời và linh hồn'
             },
             {
                 type: Content.ads
             }
         ]
+    },
+    {
+        title: 'Map For Success là gì? Bản đồ thành công lừa đảo, đa cấp có thật không?',
+        description: 'Trong xã hội ngày càng phát triển nhanh như hiện nay, việc thấu hiểu bản thân là điều cực kỳ quan trọng. Hiểu mình thì mới biết được cách để đạt được những thành công trong cuộc sống nhanh nhất, có những mối quan hệ hòa hợp chất lượng và […]',
+        thumbnail: mfsThumb,
+        createdDate: '22/08/2023',
+        to: `/gein/map-for-success`,
+        author: coach.name,
+        details: []
     }
 ]
 
 export const ads = {
-    thumbnail: 'https://nghelifecoach.com/wp-content/uploads/2023/12/sach-chuyen-hoa-ban-than-song-doi-ngoai-hang.png',
+    thumbnail: adsImg,
     title: 'Sách Chuyển hóa bản thân – Sống đời ngoại hạng',
     description: 'Cuốn sách cháy hàng liên tục kể từ khi GEIN ra mắt, đã giúp hàng nghìn người thấu hiểu và chuyển hóa chính mình sau khi đọc xong.',
     link: '/sach/sach-chuyen-hoa-ban-than-song-doi-ngoai-hang/'
