@@ -2,8 +2,10 @@ import { FC } from "preact/compat";
 import { Panel, PanelGroup } from "rsuite";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import { CourseSectionProps } from "../Course";
+import clsx from "clsx";
 
 const list = [
     {
@@ -78,6 +80,8 @@ const list = [
 
 export const TableOfContent: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     const renderLink = (content: string) => (
         <a href={`#${content.toLowerCase().split(' ').join('-')}`}>
             {content}    
@@ -85,7 +89,7 @@ export const TableOfContent: FC<CourseSectionProps> = ({ className }) =>
     )
 
     return (
-        <Wrapper className='toc px-24'>
+        <Wrapper className={clsx('toc', isMobile ? 'px-8' : 'px-24')}>
             <PanelGroup bordered accordion>
                 <Panel
                     header={(
@@ -97,7 +101,7 @@ export const TableOfContent: FC<CourseSectionProps> = ({ className }) =>
                 >
                     <ol className='px-8'>
                         {list.map(({ content, subs }, index) => (
-                            <li key={index}>
+                            <li key={index} className='mb-2'>
                                 {renderLink(content)}
                                 {Array.isArray(subs) && (
                                     <ul className='pl-4' style={{ listStyleType: 'decimal' }}>

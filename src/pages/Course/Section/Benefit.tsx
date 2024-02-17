@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Number1, Number2, Number3, Number4, Number5, Number6, SVGProps } from "@/components/bases/SVG";
 import { Mark } from "@/components/apps/Content/Mark";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import { CourseSectionProps } from "../Course";
 
@@ -42,13 +43,15 @@ const benefits = [
 
 export const Benefit: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+    
     return (
-        <Wrapper wrapperClassName='benefit bg bg-1' className={clsx(className, 'benefit-content w-full flex flex-col items-center')}>
+        <Wrapper wrapperClassName='benefit bg bg-1' className={clsx('benefit-content w-full flex flex-col items-center', isMobile ? 'p-8' : className)}>
             <h2 className='title'>LỢI ÍCH KHOÁ HỌC</h2>
             <p><strong>Thiết Kế Bản Đồ Vươn Tới Thành Công</strong></p>
             <div className='separator bold' />
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 'var(--spacing-4)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap: 'var(--spacing-4)' }}>
                 {benefits.map((benefit, index) => (
                     <Item
                         key={index}

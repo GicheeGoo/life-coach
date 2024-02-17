@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { UserBoard, Book, Gradurate } from '@/components/bases/SVG';
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import { CourseSectionProps } from "../Course";
 
@@ -28,13 +29,15 @@ const bonuses = [
 
 export const Bonus: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     return (
-        <Wrapper className={clsx(className, 'bonus my-0 w-full flex flex-col items-center')}>
+        <Wrapper className={clsx('bonus my-0 w-full flex flex-col items-center', isMobile ? 'p-8' : className)}>
             <h2 style={{ color: 'var(--section-fourth-color)' }}>ĐẶC BIỆT BẠN SẼ ĐƯỢC TẶNG THÊM</h2>
             <p className='title'>Một tài khoản CRM giúp bạn lãi ngay sau khi học</p>
             <div className='separator sm bold' />
 
-            <div className="flex gap-4">
+            <div className={clsx('flex gap-4', isMobile && 'flex-col')}>
                 {bonuses.map((bonus, index) => (
                     <Item
                         key={index}

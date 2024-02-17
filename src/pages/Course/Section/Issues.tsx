@@ -8,8 +8,9 @@ import { Cash, Cursor, Downtrend, Fish, Group, Passion, PowerButton, SVGProps, S
 import { CourseSectionProps } from "../Course";
 
 import { ANIMATION_CONFIG } from "@/constants/animationConfig";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
-const issues1 = [
+const issues = [
     {
         icon: Cursor,
         title: 'Định Hướng',
@@ -30,9 +31,6 @@ const issues1 = [
         title: 'Đam Mê',
         content: 'Không có sự đam mê trong công việc, mau chán nản, trì trệ không có sự thăng tiến'
     },
-]
-
-const issues2 = [
     {
         icon: Downtrend,
         title: 'Tiêu Cực',
@@ -57,30 +55,27 @@ const issues2 = [
 
 export const Issues: FC<CourseSectionProps> = ({ className }) =>
 {
-    const renderRow = (issues: typeof issues1) =>
-    {
-        return (
-            <Animate initial={{ y: -ANIMATION_CONFIG.initPosition }} whileInView={{ y: ANIMATION_CONFIG.animatePosition }}>
-                <div
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr 1fr 1fr'
-                    }}
-                >
-                    {issues.map((issue, index) => <Issue key={index} {...issue} />)}
-                </div>
-            </Animate>
-        )
-    }
+    const isMobile = useBreakPoint('mobile');
 
     return (
-        <Wrapper className='issue my-8'>
+        <Wrapper className={clsx('issue my-8', isMobile && 'p-8')}>
             <div className='flex flex-col items-center'>
                 <h2 className='title'>8 VẤN ĐỀ AI CŨNG TỪNG TRẢI QUA TRONG CUỘC ĐỜI</h2>
                 <div className='separator dashed' />
             </div>
-            {renderRow(issues1)}
-            {renderRow(issues2)}
+
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr 1fr'
+                }}
+            >
+                {issues.map((issue, index) => (
+                    <Animate key={index} initial={{ y: -ANIMATION_CONFIG.initPosition }} whileInView={{ y: ANIMATION_CONFIG.animatePosition }}>
+                        <Issue {...issue} />
+                    </Animate>
+                ))}
+            </div>
         </Wrapper>
     )
 }

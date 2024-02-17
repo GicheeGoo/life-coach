@@ -1,16 +1,22 @@
 import { FC } from "preact/compat";
 import clsx from "clsx";
 
+import { HomeSection } from "..";
+
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
-import { HomeSection } from "..";
+
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import { details } from '@/constants/coach';
 import coach from '@/assets/life-coach-2.png';
 
-export const SectionB: FC<HomeSection> = ({ className }) => {
+export const SectionB: FC<HomeSection> = ({ className }) =>
+{
+    const isMobile = useBreakPoint('mobile');
+
     return (
-        <Wrapper className={clsx('flex', className)}>
+        <Wrapper className={clsx('flex', className, isMobile && 'flex-col')}>
             <div className='flex-1'>
                 <Image src={coach}/>
                 <div style={{ textAlign: 'center' }}>

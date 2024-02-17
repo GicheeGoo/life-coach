@@ -54,7 +54,7 @@ export const generateContent = (data: Detail) =>
         case Content.m: return <Mark {...(data as any)} />
         case Content.v: return <Video {...(data as any)} />
         case Content.q: return (
-            <blockquote className='mb-4'>
+            <blockquote className='m-4'>
                 {content.map(((c, index) => <p key={index}>{c}</p>))}
             </blockquote>
         )

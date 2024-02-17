@@ -6,7 +6,7 @@ export const List: FC<Detail> = props =>
     const { content, style = 'disc' } = props;
 
     return (
-        <ul className='ml-8 mb-4' style={{ listStyleType: style }}>
+        <ul className='ml-10 mb-4' style={{ listStyleType: style }}>
             {content.map((c, index) => (
                 <li key={index}>
                     {c}

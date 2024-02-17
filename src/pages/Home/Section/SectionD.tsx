@@ -1,8 +1,12 @@
 import { FC } from "preact/compat";
+import clsx from "clsx";
+
+import { HomeSection } from "..";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
-import { HomeSection } from "..";
+
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import listing1 from '@/assets/imageWithCustomer/customer-9.jpg';
 import listing2 from '@/assets/imageWithCustomer/customer-18.jpg';
@@ -19,10 +23,12 @@ const list = [
 
 export const SectionD: FC<HomeSection> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     return (
         <Wrapper className={className}>
-            <div className='flex gap-16 items-center'>
-                <div className='head-line flex-1 mr-16 h-max'>
+            <div className={clsx('flex gap-24 items-center', isMobile && 'flex-col')}>
+                <div className='head-line flex-1 h-max'>
                     <h2>Đến với Nghề Life Coach bạn được gì?</h2>
                     <p>Nghề Life Coach là một blog tôi và trợ lý lập ra để chia sẻ, lan tỏa và giúp đỡ những người đang muốn thoát khỏi vũng lầy của cuộc sống để đón nhận cuộc đời mới tốt đẹp hơn</p>
 

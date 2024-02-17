@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { RegisterForm } from "@/components/apps/RegisterForm/RegisterForm";
 
+import { useBreakPoint } from "@/hooks/useBreakPoint";
+
 import { CourseSectionProps } from "../Course";
 
 const details = [
@@ -18,8 +20,10 @@ const details = [
 
 export const Register: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+    
     return (
-        <Wrapper wrapperClassName='register bg bg-2' className={clsx(className, 'flex')}>
+        <Wrapper wrapperClassName='register bg bg-2' className={clsx('flex', isMobile ? 'p-8 flex-col gap-8' : className)}>
             <div className='flex-1'>
                 <h2>ĐĂNG KÝ NGAY</h2>
                 <h3 style={{ color: 'var(--section-color)' }}>25.000.000đ</h3>

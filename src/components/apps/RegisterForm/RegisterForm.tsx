@@ -5,10 +5,13 @@ import Form from 'rsuite/esm/Form/Form';
 import ButtonToolbar from 'rsuite/esm/ButtonToolbar/ButtonToolbar';
 
 import { Button } from '@/components/bases/Button/Button';
+import { Callout } from '@/components/bases/Callout/Callout';
+
+import { useBreakPoint } from '@/hooks/useBreakPoint';
+import { details } from '@/constants/coach';
 
 import './RegisterForm.scss';
-import { Callout } from '@/components/bases/Callout/Callout';
-import { details } from '@/constants/coach';
+import clsx from 'clsx';
 
 type FormData = { name: string, phoneNumber: string, email: string }
 
@@ -19,6 +22,8 @@ const message = {
 
 export const RegisterForm: FC = props =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     const [success, setSuccess] = useState<boolean>()
 
     const handleSubmit = (checkStatus: boolean, event: React.FormEvent<HTMLFormElement>) =>
@@ -41,7 +46,7 @@ export const RegisterForm: FC = props =>
     }
 
     return (
-        <Form<FormData> className='register-form w-full px-8' onSubmit={handleSubmit}>
+        <Form<FormData> className={clsx('register-form w-full', !isMobile && 'px-8')} onSubmit={handleSubmit}>
             {typeof success === 'boolean' && (
                 <Callout
                     type={success ? 'success' : 'danger'}

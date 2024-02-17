@@ -3,11 +3,13 @@ import clsx from "clsx";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
+import { Animate } from "@/components/bases/Animate/Animate";
 
 import { CourseSectionProps } from "../Course";
 
+import { useBreakPoint } from "@/hooks/useBreakPoint";
+
 import banner from '@/assets/course-mfs-banner.jpeg'
-import { Animate } from "@/components/bases/Animate/Animate";
 
 const goals = [
     'Nhận thức điểm mạnh, điểm yếu và những bài học bạn cần tốt nghiệp trong cuộc đời của mình.',
@@ -25,8 +27,10 @@ const includes = [
 
 export const MapForSuccess: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+    
     return (
-        <Wrapper wrapperClassName='mfs bg bg-2' className={clsx('flex gap-12 w-full', className)}>
+        <Wrapper wrapperClassName='mfs bg bg-2' className={clsx('flex gap-12 w-full', isMobile ? 'flex-col p-8' : className)}>
             <div className='flex-1'>
                 <h2 className='mt-5'>Khóa học Thiết kế bản đồ thành công Map For Success</h2>
                 <h3 className='mb-0'>Giới thiệu khóa học:</h3>

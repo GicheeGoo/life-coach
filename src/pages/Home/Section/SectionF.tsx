@@ -13,6 +13,8 @@ import {
 
 import { HomeSection } from "..";
 
+import { useBreakPoint } from "@/hooks/useBreakPoint";
+
 import book1 from '@/assets/book1.png';
 import book2 from '@/assets/book2.png';
 import book3 from '@/assets/book3.png';
@@ -40,9 +42,11 @@ const books = [
 
 export const SectionF: FC<HomeSection> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     return (
-        <Wrapper className={clsx('flex gap-8', className)}>
-            <div className='head-line head-line-left w-full' style={{ maxWidth: '25%' }}>
+        <Wrapper className={clsx('flex gap-8', className, isMobile && 'flex-col')}>
+            <div className='head-line head-line-left w-full' style={{ maxWidth: isMobile ? 'unset' : '25%' }}>
                 <h2>Ấn phẩn nổi bật</h2>
                 <p>Những cuốn sách, ebook hay những ấn phẩm ý nghĩa đang được nhiều người mua đọc, sử dụng hoặc làm quà tặng</p>
                 <Button
@@ -70,13 +74,15 @@ const Book: FC<(typeof books)[number]> = props =>
 {
     const { src, title, to } = props
 
+    const isMobile = useBreakPoint('mobile');
+    
     const svgProps = {
         width: 16,
         height: 16,
     }
 
     return (
-        <div className='book flex-1'>
+        <div className={clsx('book flex-1', isMobile && 'flex flex-col items-center mb-4')}>
             <Image className='mb-8' src={src} />
             <h5>{title}</h5>
             <div className='flex gap-6 justify-center'>

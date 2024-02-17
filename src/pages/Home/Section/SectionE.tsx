@@ -1,8 +1,12 @@
 import { FC } from "preact/compat";
+import clsx from "clsx";
+
+import { HomeSection } from "..";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
-import { HomeSection } from "..";
+
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import { details } from '@/constants/coach';
 
@@ -10,12 +14,12 @@ const reviews = [
     {
         src: '',
         review: `“Sau khi nghe ${details.gender} ${details.name} luận giải thì chị đã hiểu hơn về tính cách của con, điểm mạnh, điểm yếu của con, và đã giải đáp được những thắc mắc của mẹ về khía cạnh bướng bỉnh của con. Giúp mẹ có định hướng tốt hơn trong việc tạo môi trường giúp con mình phá triển toàn diện hơn. Cảm ơn em đã giải thích cặn kẽ, rất chi tiết về đường đời của con cũng như những thắc mắc của chị về con. Giúp chị hiểu con mình hơn và có định hướng ”`,
-        signal: 'Trần Dung'
+        signal: 'TRẦN DUNG'
     },
     {
         src: '',
         review: `“Cảm ơn Giám đốc xinh đẹp ${details.name} của Gein Academy đã mở bản đồ Map For Success cho 2 mẹ con chị và đã dành gần 2h để luận giải bản đồ, đã giúp chị nắm được những điểm yếu cần khắc phục và những điểm mạnh cần phát huy, giúp chị biết sứ mệnh của mình là gì, nên làm gì. Tấm bản đồ Map For Success này không những có thể giúp mình dự đoán tương lai, biết được những khó khăn, thách thức có thể xảy đến mà nó còn tái hiện hành trình mà mình đã đi, những sự việc mình đã trải qua trong quá khứ, và thật ngạc nhiên là nó trung hợp đến bất ngờ. Biết ơn Map For Success!”`,
-        signal: 'Hà Nguyễn'
+        signal: 'HÀ NGUYỄN'
     },
     {
         src: '',
@@ -26,12 +30,14 @@ const reviews = [
 
 export const SectionE: FC<HomeSection> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     return (
         <Wrapper className={className}>
             <div className='flex justify-center head-line head-line-center'>
                 <h2>Reviews</h2>
             </div>
-            <div className='flex'>
+            <div className={clsx('flex', isMobile && 'flex-col gap-4')}>
                 {reviews.map((review, index) => (
                     <Review
                         key={index}

@@ -37,6 +37,11 @@
     .stories,
     .faq {
         --section-color: var(--section-primary-color);
+
+        h2,
+        .title {
+            text-align: center;
+        }
     }
 
     .solution {
@@ -53,6 +58,10 @@
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
+
+            &.grid-mobile {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
@@ -80,6 +89,12 @@
 
     .register {
         --section-color: rgba(255, 234, 0, 1);
+    }
+
+    .faq {
+        p {
+            margin-bottom: var(--spacing-4);
+        }
     }
 
     .toc {

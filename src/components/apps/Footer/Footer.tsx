@@ -5,6 +5,8 @@ import clsx from "clsx";
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
 
+import { useBreakPoint } from "@/hooks/useBreakPoint";
+
 import { generateContact } from "@/helpers/contactLink";
 import { details } from '@/constants/coach';
 import { ROUTE_URL } from "@/constants/routes";
@@ -24,13 +26,14 @@ const links = [
 export const Footer: FC = props =>
 {
     const { path } = useLocation();
+    const isMobile = useBreakPoint('mobile');
 
     const dark = [ROUTE_URL.home, ROUTE_URL.course]
 
     return (
         <>
             <Wrapper wrapperClassName={clsx('footer', dark.includes(path) && 'dark')}>
-                <div className='footer-content flex gap-8 py-12'>
+                <div className={clsx('footer-content flex gap-8 py-12', isMobile && 'flex-col px-8')}>
                     <div className='flex-2'>
                         <Image className='mb-4' src={logo} width={101} />
                         <p>Nghề Life Coach ra đời với mong muốn giúp đỡ mọi người có cuộc sống tốt đẹp, hạnh phúc và viên mãn hơn mỗi ngày!</p>

@@ -2,12 +2,14 @@ import { FC } from "preact/compat";
 import clsx from "clsx";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
-import { Image } from "@/components/bases/Image/Image";
 import { Animate } from "@/components/bases/Animate/Animate";
+
+import { Image } from "@/components/apps/Content/Image";
 
 import { CourseSectionProps } from "../Course";
 
 import { ANIMATION_CONFIG } from "@/constants/animationConfig";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import who1 from '@/assets/who-1.png';
 import who2 from '@/assets/who-2.png';
@@ -33,8 +35,10 @@ const people = [
 
 export const Who: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+    
     return (
-        <Wrapper className={clsx('who w-full flex flex-col items-center', className)}>
+        <Wrapper className={clsx('who w-full flex flex-col items-center', isMobile ? 'p-8' : className)}>
             <h2 className='title'>AI LÀ NGƯỜI ĐÀO TẠO?</h2>
             <p style={{
                 fontStyle: 'italic',
@@ -48,7 +52,7 @@ export const Who: FC<CourseSectionProps> = ({ className }) =>
                 initial={{ x: -ANIMATION_CONFIG.initPosition }}
                 whileInView={{ x: ANIMATION_CONFIG.animatePosition }}
             >
-                <div className="flex gap-6">
+                <div className={clsx('flex gap-6', isMobile && 'flex-col')}>
                     {people.map((person, index) => (
                         <Person
                             key={index}
@@ -74,9 +78,8 @@ export const Person: FC<PersonProps> = props =>
     return (
         <div className="flex flex-col items-center">
             <Image
-                className='mb-4'
-                src={src}
-                style={{ borderRadius: 'var(--spacing-2)' }}
+                content={[src]}
+                rounded
             />
             
             <h4 className='mb-2 title'>{name}</h4>

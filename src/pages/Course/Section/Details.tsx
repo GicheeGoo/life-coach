@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 import { CourseSectionProps } from "../Course";
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 const details = [
     {
@@ -43,14 +44,16 @@ const details = [
 
 export const Details: FC<CourseSectionProps> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     return (
-        <Wrapper wrapperClassName='bg bg-1' className={clsx('details w-full', className)}>
+        <Wrapper wrapperClassName='bg bg-1' className={clsx('details w-full', isMobile ? 'p-8' : className)}>
             <div className='w-full flex flex-col items-center'>
                 <h2 className='title'>NỘI DUNG KHOÁ HỌC</h2>
                 <div className='separator bold sm' />
             </div>
 
-            <div className='grid gap-8'>
+            <div className={clsx('grid gap-8', isMobile && 'grid-mobile')}>
                 {details.map(detail => (
                     <Card key={detail.bg} {...detail} />
                 ))}

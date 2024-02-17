@@ -1,10 +1,12 @@
 import { FC, ReactNode } from "preact/compat";
-import { useLocation } from "preact-iso";
+import clsx from "clsx";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Button } from "@/components/bases/Button/Button";
 import { Image } from "@/components/bases/Image/Image";
 import { Right } from "@/components/bases/SVG";
+
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import shortImg1 from '@/assets/short-post-1.png';
 import shortImg2 from '@/assets/short-post-2.png';
@@ -36,9 +38,11 @@ const shortPosts = [
 
 export const SectionC: FC<HomeSection> = ({ className }) =>
 {
+    const isMobile = useBreakPoint('mobile');
+
     return (
         <Wrapper className={className}>
-            <div className='head-line flex'>
+            <div className={clsx('head-line flex', isMobile && 'flex-col')}>
                 <div className='flex-1'>
                     <h2>
                         Bài viết nổi bậc
@@ -48,7 +52,7 @@ export const SectionC: FC<HomeSection> = ({ className }) =>
                         Những kiến thức, kinh nghiệm và bài học hay được chúng tôi chia sẻ lại với đọc giả về life coach, chữa lành và thần số học
                     </p>
                 </div>
-                <div className='flex flex-1 justify-end items-end'>
+                <div className={clsx('flex flex-1 items-end', !isMobile && 'justify-end')}>
                     <Button
                         appearance='primary'
                         color='red'
@@ -60,7 +64,7 @@ export const SectionC: FC<HomeSection> = ({ className }) =>
                     </Button>
                 </div>
             </div>
-            <div className='flex gap-8 mt-16'>
+            <div className={clsx('flex gap-8 mt-16', isMobile && 'flex-col')}>
                 {shortPosts.map((post, index) => (
                     <ShortPost
                         key={index}
@@ -78,8 +82,6 @@ const ShortPost: FC<ShortPostProps> = props =>
 {
     const { src, title, description, to } = props;
 
-    const { route } = useLocation()
-
     const renderLink = (children: ReactNode) => (
         <a href={to}>
             {children}
@@ -88,7 +90,7 @@ const ShortPost: FC<ShortPostProps> = props =>
 
     return (
         <div className='short-post flex flex-col flex-1 overflow-hidden'>
-            {renderLink(<Image src={src} className='h-64'/>)}
+            {renderLink(<Image src={src} className='h-64 w-full'/>)}
             
             <div className='flex-1 px-8 pt-4'>
                 {renderLink(<h5 className='color-primary'>{title}</h5>)}

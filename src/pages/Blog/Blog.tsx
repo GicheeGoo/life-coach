@@ -4,8 +4,12 @@ import { ShortPost } from "./ShortPost";
 import { posts } from "./posts";
 
 import './Blog.scss';
+import clsx from "clsx";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 export const Blog: FC = () => {
+    const isMobile = useBreakPoint('mobile');
+
     const handleChangeSearchKey = (event) => {
 
     }
@@ -14,10 +18,10 @@ export const Blog: FC = () => {
         <div class={'blog w-full'}>
             <div class={'site-content'}>
                 <div class="ast-container">
-                    <div class={'flex-container'}>
-                        <div id="primary" class="content-area primary ast-grid-2">
+                    <div class={clsx('flex-container', isMobile && 'flex-col')}>
+                        <div id="primary" class={clsx("content-area primary ast-grid-2", isMobile && 'w-full mt-8')}>
                             <main id="main" class="site-main">
-                                <div class="ast-row gap-4">
+                                <div class={clsx('ast-row gap-4', isMobile && 'flex-col gap-8')}>
                                     {posts.map((blog, index) => {
                                         return (
                                             <ShortPost
@@ -35,7 +39,7 @@ export const Blog: FC = () => {
                                 </div>
                             </main>
                         </div>
-                        <div class="widget-area secondary" id="secondary" itemtype="https://schema.org/WPSideBar">
+                        <div class={clsx('widget-area secondary', isMobile && 'w-full p-0 mt-8')} id="secondary" itemtype="https://schema.org/WPSideBar">
                             <div class="sidebar-main">
 
                                 <aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://nghelifecoach.com/">

@@ -1,9 +1,11 @@
 import { FC, Fragment } from "preact/compat";
+import clsx from "clsx";
 
 import { Wrapper } from "@/components/bases/Wrapper/Wrapper";
 import { Image } from "@/components/bases/Image/Image";
 
 import { Post as PostType } from "../posts";
+import { useBreakPoint } from "@/hooks/useBreakPoint";
 
 import { generateContent } from "@/utils/generateContent";
 import { details as coach } from '@/constants/coach';
@@ -15,12 +17,14 @@ import './Post.scss';
 export const Post: FC<PostType> = props =>
 {
     const { title, author, createdDate, details } = props;
+    
+    const isMobile = useBreakPoint('mobile');
 
     return (
-        <div className='blog-wrapper py-12'>
+        <div className={clsx('blog-wrapper', isMobile ? 'py-8' : 'py-12')}>
             <Wrapper
-                wrapperClassName='px-4'
-                className='blog p-12 bg-light'
+                wrapperClassName={isMobile ? undefined : 'px-4'}
+                className={clsx('blog bg-light', isMobile ? 'p-8' : 'p-12')}
             >
                 <h1>
                     {title}
