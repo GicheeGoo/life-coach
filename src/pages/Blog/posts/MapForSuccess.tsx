@@ -1,9 +1,10 @@
+import { FC } from 'preact/compat';
+import clsx from 'clsx';
+
 import PanelGroup from 'rsuite/esm/PanelGroup/PanelGroup';
 import Panel from 'rsuite/esm/Panel/Panel';
 
 import { Post } from '../posts';
-
-import { details as coach } from "@/constants/coach";
 
 import mfsThumb from '../images/MapForSuccess/mfs-thumb.png';
 import mfs1 from '../images/MapForSuccess/mfs-1.webp';
@@ -23,6 +24,8 @@ import { Content, Detail } from '@/utils/generateContent';
 import { ArrowRightCircle, UpRightFromSquare } from '@/components/bases/SVG';
 import { Video } from '@/components/apps/Content/Video';
 
+import { useBreakPoint } from '@/hooks/useBreakPoint';
+import { details as coach } from "@/constants/coach";
 
 const mfsBase = [
     <><strong>60%</strong> là bộ môn nghiên cứu khoa học về các con số (Numerology – Việt Nam thường gọi là Thần số học)</>,
@@ -134,6 +137,21 @@ const mfsFAQs = [
         )
     }
 ]
+
+const Reviews: FC = () =>
+{
+    const isMobile = useBreakPoint('mobile');
+
+    return (
+        <div className={clsx('flex gap-4 mb-4', isMobile && 'flex-col')}>
+            {mfsReviews.map((value, key) => (
+                <div key={key} className='flex-1'>
+                    <Video content={[value.src]} alt={value.author} />
+                </div>
+            ))}
+        </div>
+    )
+}
 
 const ContactToBuy: Detail = {
     type: Content.ct,
@@ -438,15 +456,7 @@ export const MapForSuccess: Post = {
         },
         {
             type: Content.c,
-            content: [(
-                <div className='flex gap-4 mb-4'>
-                    {mfsReviews.map((value, key) => (
-                        <div key={key} className='flex-1'>
-                            <Video content={[value.src]} alt={value.author} />
-                        </div>
-                    ))}
-                </div>
-            )]
+            content: [<Reviews />]
         },
         ContactToBuy,
         {

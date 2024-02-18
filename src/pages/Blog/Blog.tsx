@@ -16,7 +16,7 @@ export const Blog: FC = () => {
 
     return (
         <div class={'blog w-full'}>
-            <div class={'site-content'}>
+            <div class={'site-content pb-8'}>
                 <div class="ast-container">
                     <div class={clsx('flex-container', isMobile && 'flex-col')}>
                         <div id="primary" class={clsx("content-area primary ast-grid-2", isMobile && 'w-full mt-8')}>
