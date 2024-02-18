@@ -208,3 +208,39 @@
         }
     }
 }
+
+.numerology {
+    margin-bottom: var(--spacing-4);
+
+    &,
+    th,
+    td {
+        border: 1px solid var(--main-color);
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: var(--spacing-2);
+    }
+}
+
+.mfs-faqs {
+    .rs-panel {
+        background-color: rgba(var(--main), .05);
+        margin-bottom: var(--spacing-2);
+
+        &-header {
+            padding: var(--spacing-4);
+        }
+
+        &-body {
+            p {
+                margin-bottom: var(--spacing-2);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

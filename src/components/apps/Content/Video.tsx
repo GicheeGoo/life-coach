@@ -5,15 +5,15 @@ import { Ratio } from "@/components/bases/Ratio/Ratio";
 import { Detail } from "@/utils/generateContent";
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 
-export const Video: FC<{ rounded?: boolean } & Pick<Detail, 'content'>> = props =>
+export const Video: FC<{ rounded?: boolean } & Pick<Detail, 'content' | 'alt'>> = props =>
 {
-    const { content, rounded } = props;
+    const { content, rounded, alt } = props;
     
     const isMobile = useBreakPoint('mobile');
 
     return (
         <div className={isMobile ? 'w-screen' : undefined} style={{ marginLeft: isMobile ? 'calc(-1 * var(--spacing-8))' : 0 }}>
-            <Ratio className='mb-4' width={1200} height={675}>
+            <Ratio className='mb-2' width={1200} height={675}>
                 <iframe
                     src={content[0] as string}
                     frameborder={0}
@@ -22,6 +22,8 @@ export const Video: FC<{ rounded?: boolean } & Pick<Detail, 'content'>> = props 
                     style={{ borderRadius: (!isMobile && rounded) ? 'var(--spacing-2)' : 0 }}
                 />
             </Ratio>
+
+            <p style={{ textAlign: 'center' }}>{alt}</p>
         </div>
     )
 }

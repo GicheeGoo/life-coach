@@ -1,6 +1,7 @@
 import { SVGProps as Props } from 'preact/compat';
 
 export * from './ArrowRight';
+export * from './ArrowRightCircle';
 export * from './Bars';
 export * from './Book';
 export * from './Cash';
@@ -25,6 +26,7 @@ export * from './PowerButton';
 export * from './Right';
 export * from './Sitemap';
 export * from './Twitter';
+export * from './UpRightFromSquare';
 export * from './UserBoard';
 export * from './Youtube';
 
