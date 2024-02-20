@@ -1,4 +1,4 @@
-import { FC } from "preact/compat";
+import { details } from "@/constants/coach";
 
 export type ShortPostProps = {
     title: string,
@@ -24,11 +24,11 @@ export const ShortPost = (props: ShortPostProps) => {
                             </span> /
                             <span class="posted-on">
                                 <span class="published" itemprop="datePublished"> {datePublished} </span>
-                            </span> / By
+                            </span> / By&nbsp;
                             <span class="posted-by vcard author" itemtype="https://schema.org/Person" itemprop="author">
-                                <a title="View all posts by Thiên Lý" href="https://nghelifecoach.com/author/thienly/" rel="author" class="url fn n" itemprop="url">
+                                <a title={`View all posts by ${details.name}`} href="https://nghelifecoach.com/author/thienly/" rel="author" class="url fn n" itemprop="url">
                                     <span class="author-name" itemprop="name">
-                                        Thiên Lý
+                                        {details.name}
                                     </span>
                                 </a>
                             </span>
