@@ -1,7 +1,7 @@
 import { Detail } from "@/utils/generateContent";
 
 import { KidTalentMap } from "./posts/KidTalentMap";
-import { GEINAcademy } from "./posts/GeinAcademy";
+import { GEINAcademy } from "./posts/GEINAcademy";
 import { MapForSuccess } from "./posts/MapForSuccess";
 
 import adsImg from './images/ads/ads.png';
