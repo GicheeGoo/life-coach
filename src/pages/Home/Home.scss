@@ -10,6 +10,10 @@
         background-attachment: scroll;
         background-image: url('../../assets/life-coach.png');
         background-clip: padding-box;
+
+        @include breakpoint('desktop') {
+            background-image: none;
+        }
     }
 
     .section-title {

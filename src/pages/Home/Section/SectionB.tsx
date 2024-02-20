@@ -17,8 +17,8 @@ export const SectionB: FC<HomeSection> = ({ className }) =>
 
     return (
         <Wrapper className={clsx('flex', className, isMobile && 'flex-col')}>
-            <div className='flex-1'>
-                <Image src={coach}/>
+            <div className='flex-1 flex flex-col items-center'>
+                <Image src={coach} width={'70%'}/>
                 <div style={{ textAlign: 'center' }}>
                     <h5 className='my-2'>{details.name}</h5>
                     <p>Chuyên gia Life Coach</p>
