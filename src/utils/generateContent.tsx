@@ -31,11 +31,12 @@ export type Detail = {
     mark?: string[],
     style?: string,
     alt?: string,
+    width?: string,
 }
 
 export const generateContent = (data: Detail) =>
 {
-    const { type, content, style, alt } = data;
+    const { type, content, style, width, alt } = data;
 
     switch (type)
     {

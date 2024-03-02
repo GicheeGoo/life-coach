@@ -7,7 +7,7 @@ import Panel from 'rsuite/esm/Panel/Panel';
 import { Post } from '../posts';
 
 import mfsThumb from '../images/MapForSuccess/mfs-thumb.png';
-import mfs1 from '../images/MapForSuccess/mfs-1.webp';
+import mfs1 from '../images/MapForSuccess/mfs-1.jpg';
 import mfs2 from '../images/MapForSuccess/mfs-2.png';
 import mfs3 from '../images/MapForSuccess/mfs-3.jpeg';
 import mfs4 from '../images/MapForSuccess/mfs-4.png';
@@ -243,6 +243,7 @@ export const MapForSuccess: Post = {
         },
         {
             type: Content.i,
+            width: '50%',
             content: [mfs1]
         },
         {

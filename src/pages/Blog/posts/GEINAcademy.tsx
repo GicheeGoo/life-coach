@@ -11,9 +11,9 @@ import ga5 from '../images/GEINAcademy/ga-5.jpeg'
 import ga6 from '../images/GEINAcademy/ga-6.jpeg'
 import ga7 from '../images/GEINAcademy/ga-7.jpeg'
 import ga8 from '../images/GEINAcademy/ga-8.webp'
-import ga9 from '../images/GEINAcademy/ga-9.jpeg'
+import ga9 from '../images/GEINAcademy/ga-9.jpg'
 import ga10 from '../images/GEINAcademy/ga-10.png'
-import ga11 from '../images/GEINAcademy/ga-11.jpeg'
+import ga11 from '../images/GEINAcademy/ga-11.jpg'
 
 import { Content, Detail } from '@/utils/generateContent';
 import { Facebook } from '@/components/bases/SVG';

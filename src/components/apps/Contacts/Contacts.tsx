@@ -25,7 +25,7 @@ const contacts = [
         tooltip: 'Chat với chúng tôi qua Zalo',
         icon: (
             <a href={generateContact('zalo', details.phone.number)}>
-                <Image className='contact' src={zalo} width={50} height={50} />
+                <Image className='contact' src={zalo} width={size} height={size} />
             </a>
         )
     },

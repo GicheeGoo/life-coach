@@ -6,9 +6,9 @@ import { Image as BaseImage } from "@/components/bases/Image/Image";
 import { useBreakPoint } from "@/hooks/useBreakPoint";
 import { Detail } from "@/utils/generateContent";
 
-export const Image: FC<{ rounded?: boolean } & Pick<Detail, 'content' | 'alt'>> = props =>
+export const Image: FC<{ rounded?: boolean } & Pick<Detail, 'content' | 'alt' | 'width'>> = props =>
 {
-    const { rounded, content, alt } = props;
+    const { rounded, content, width, alt } = props;
 
     const isMobile = useBreakPoint('mobile');
 
@@ -17,7 +17,7 @@ export const Image: FC<{ rounded?: boolean } & Pick<Detail, 'content' | 'alt'>> 
             <div className={clsx('flex gap-4', isMobile ? 'w-screen flex-col' : 'w-full')}>
                 {content.map((src, index) => (
                     <div key={index} className='flex flex-1 justify-center'>
-                        <BaseImage src={src as string} style={{ borderRadius: rounded ? 'var(--spacing-2)' : 0 }} />
+                        <BaseImage src={src as string} style={{ width, borderRadius: rounded ? 'var(--spacing-2)' : 0 }} />
                     </div>
                 ))}
             </div>
